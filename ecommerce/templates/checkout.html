@@ -24,9 +24,8 @@
     <div class="checkout-header">
       <div class="header-content">
         <div class="checkout-header-left-section">
-          <a href="{%url 'amazon'%}">
-            <img class="amazon-logo" src="{% static 'images/amazon-logo.png'%}">
-            <img class="amazon-mobile-logo" src="{% static 'images/amazon-mobile-logo.png'%}">
+          <a href="{%url 'amazon'%}" style="text-decoration: none;">
+            <h2 style="color: black; margin: 0; font-family: Roboto; font-style: italic;">Ecommerce</h2>
           </a>
         </div>
 
@@ -36,13 +35,13 @@
         </div>
 
         <div class="checkout-header-right-section" style="display: flex; align-items: center; justify-content: flex-end; gap: 15px;">
-        <div class="js-user-container" style="display: flex; align-items: center; gap: 10px;">
-          <span class="js-username-greeting" style="font-weight: 700; font-size: 15px; color: #0F1111;">Guest</span>
-          <button class="js-logout-button" style="display: flex; align-items: center; gap: 6px; background: #f7ebae; border: 1px solid #FCD200; border-radius: 4px; font-family: Roboto; font-weight: 700; font-size: 13px; color: #0F1111; cursor: pointer; padding: 6px 12px; box-shadow: 0 2px 5px rgba(213,217,217,0.5); white-space: nowrap;">
-            <i class="fa-solid fa-right-from-bracket"></i> Log out
+        <div class="js-user-container user-container">
+          <span class="js-username-greeting username-greeting" style="font-weight: 700; font-size: 15px; color: #0F1111;">Guest</span>
+          <button class="js-logout-button logout-button">
+            <i class="fa-solid fa-right-from-bracket"></i> <span class="logout-text">Log out</span>
           </button>
         </div>
-          <img src="{% static 'images/icons/checkout-lock-icon.png' %}">
+          <img src="{% static 'images/icons/checkout-lock-icon.png' %}" class="checkout-lock-icon">
         </div>
       </div>
     </div>

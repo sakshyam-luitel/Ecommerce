@@ -121,3 +121,71 @@
   width: 26px;
   text-align: center;
 }
+
+.user-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.username-greeting {
+  font-weight: 700;
+  font-size: 15px;
+  color: white;
+  white-space: nowrap;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: orange;
+  border: none;
+  border-radius: 4px;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 13px;
+  color: black;
+  cursor: pointer;
+  padding: 6px 12px;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+@media (max-width: 800px) {
+  .amazon-header-right-section {
+    width: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .amazon-header {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .username-greeting {
+    display: none;
+  }
+  .returns-text {
+    display: none;
+  }
+  .orders-link {
+    gap: 0;
+  }
+  .cart-text {
+    display: none;
+  }
+  .logout-text {
+    display: none;
+  }
+  .logout-button {
+    padding: 6px;
+  }
+  .user-container {
+    gap: 5px;
+    margin-right: 5px;
+  }
+}
+

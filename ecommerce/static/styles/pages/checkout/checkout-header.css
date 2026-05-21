@@ -96,8 +96,58 @@
   width: 150px;
 }
 
+.user-container {
+  display: flex; 
+  align-items: center; 
+  gap: 10px;
+}
+
+.logout-button {
+  display: flex; 
+  align-items: center; 
+  gap: 6px; 
+  background: #f7ebae; 
+  border: 1px solid #FCD200; 
+  border-radius: 4px; 
+  font-family: Roboto; 
+  font-weight: 700; 
+  font-size: 13px; 
+  color: #0F1111; 
+  cursor: pointer; 
+  padding: 6px 12px; 
+  box-shadow: 0 2px 5px rgba(213,217,217,0.5); 
+  white-space: nowrap;
+}
+
 @media (max-width: 1000px) {
   .checkout-header-right-section {
     width: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .checkout-header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .username-greeting {
+    display: none;
+  }
+
+  .logout-text {
+    display: none;
+  }
+
+  .logout-button {
+    padding: 6px;
+  }
+  
+  .user-container {
+    gap: 5px;
+  }
+  
+  .checkout-header-right-section {
+    gap: 5px !important;
   }
 }
