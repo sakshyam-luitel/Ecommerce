@@ -1,0 +1,1790 @@
+﻿[
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2026-03-29T14:17:10.418Z",
+    "user": 8,
+    "content_type": 4,
+    "object_id": "3",
+    "object_repr": "sakshyam",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2026-03-29T14:17:16.688Z",
+    "user": 8,
+    "content_type": 4,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2026-03-29T14:17:21.881Z",
+    "user": 8,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "admin@example.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2026-03-29T16:08:45.058Z",
+    "user": 8,
+    "content_type": 4,
+    "object_id": "9",
+    "object_repr": "sakshyam73",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2026-03-29T16:08:51.075Z",
+    "user": 8,
+    "content_type": 4,
+    "object_id": "10",
+    "object_repr": "sakshyam122",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2026-03-29T17:53:13.502Z",
+    "user": 8,
+    "content_type": 16,
+    "object_id": "4",
+    "object_repr": "sakshyam112@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2026-03-29T17:53:19.397Z",
+    "user": 8,
+    "content_type": 16,
+    "object_id": "5",
+    "object_repr": "sakshyam122@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2026-03-29T17:53:24.665Z",
+    "user": 8,
+    "content_type": 16,
+    "object_id": "3",
+    "object_repr": "sakshyam73@gmail.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2026-04-01T15:53:29.643Z",
+    "user": 8,
+    "content_type": 7,
+    "object_id": "10ed8504-57db-433c-b0a3-fc71a35c88a1",
+    "object_repr": "Cart object (10ed8504-57db-433c-b0a3-fc71a35c88a1)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2026-04-01T15:53:37.657Z",
+    "user": 8,
+    "content_type": 7,
+    "object_id": "0d7f9afa-2efe-4fd9-b0fd-ba5663e0a524",
+    "object_repr": "Cart object (0d7f9afa-2efe-4fd9-b0fd-ba5663e0a524)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2026-04-02T09:02:52.902Z",
+    "user": 8,
+    "content_type": 13,
+    "object_id": "1fc4d5f3-9044-4943-8d9e-25f59adf741b",
+    "object_repr": "Order object (1fc4d5f3-9044-4943-8d9e-25f59adf741b)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2026-04-02T09:02:58.504Z",
+    "user": 8,
+    "content_type": 13,
+    "object_id": "5ced40c9-dfe4-4d77-b4f2-68f9e27d9083",
+    "object_repr": "Order object (5ced40c9-dfe4-4d77-b4f2-68f9e27d9083)",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add cart",
+    "content_type": 7,
+    "codename": "add_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change cart",
+    "content_type": 7,
+    "codename": "change_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete cart",
+    "content_type": 7,
+    "codename": "delete_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view cart",
+    "content_type": 7,
+    "codename": "view_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add products",
+    "content_type": 8,
+    "codename": "add_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change products",
+    "content_type": 8,
+    "codename": "change_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete products",
+    "content_type": 8,
+    "codename": "delete_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view products",
+    "content_type": 8,
+    "codename": "view_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add products",
+    "content_type": 9,
+    "codename": "add_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change products",
+    "content_type": 9,
+    "codename": "change_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete products",
+    "content_type": 9,
+    "codename": "delete_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view products",
+    "content_type": 9,
+    "codename": "view_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add cart",
+    "content_type": 10,
+    "codename": "add_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change cart",
+    "content_type": 10,
+    "codename": "change_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete cart",
+    "content_type": 10,
+    "codename": "delete_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view cart",
+    "content_type": 10,
+    "codename": "view_cart"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add products",
+    "content_type": 11,
+    "codename": "add_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change products",
+    "content_type": 11,
+    "codename": "change_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete products",
+    "content_type": 11,
+    "codename": "delete_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view products",
+    "content_type": 11,
+    "codename": "view_products"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add order item",
+    "content_type": 12,
+    "codename": "add_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change order item",
+    "content_type": 12,
+    "codename": "change_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete order item",
+    "content_type": 12,
+    "codename": "delete_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view order item",
+    "content_type": 12,
+    "codename": "view_orderitem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add order",
+    "content_type": 13,
+    "codename": "add_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change order",
+    "content_type": 13,
+    "codename": "change_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete order",
+    "content_type": 13,
+    "codename": "delete_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view order",
+    "content_type": 13,
+    "codename": "view_order"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add Token",
+    "content_type": 14,
+    "codename": "add_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change Token",
+    "content_type": 14,
+    "codename": "change_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": 14,
+    "codename": "delete_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view Token",
+    "content_type": 14,
+    "codename": "view_token"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add Token",
+    "content_type": 15,
+    "codename": "add_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change Token",
+    "content_type": 15,
+    "codename": "change_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete Token",
+    "content_type": 15,
+    "codename": "delete_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view Token",
+    "content_type": 15,
+    "codename": "view_tokenproxy"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add email address",
+    "content_type": 16,
+    "codename": "add_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change email address",
+    "content_type": 16,
+    "codename": "change_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete email address",
+    "content_type": 16,
+    "codename": "delete_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view email address",
+    "content_type": 16,
+    "codename": "view_emailaddress"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 65,
+  "fields": {
+    "name": "Can add email confirmation",
+    "content_type": 17,
+    "codename": "add_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 66,
+  "fields": {
+    "name": "Can change email confirmation",
+    "content_type": 17,
+    "codename": "change_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 67,
+  "fields": {
+    "name": "Can delete email confirmation",
+    "content_type": 17,
+    "codename": "delete_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 68,
+  "fields": {
+    "name": "Can view email confirmation",
+    "content_type": 17,
+    "codename": "view_emailconfirmation"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 69,
+  "fields": {
+    "name": "Can add social account",
+    "content_type": 18,
+    "codename": "add_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 70,
+  "fields": {
+    "name": "Can change social account",
+    "content_type": 18,
+    "codename": "change_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 71,
+  "fields": {
+    "name": "Can delete social account",
+    "content_type": 18,
+    "codename": "delete_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 72,
+  "fields": {
+    "name": "Can view social account",
+    "content_type": 18,
+    "codename": "view_socialaccount"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 73,
+  "fields": {
+    "name": "Can add social application",
+    "content_type": 19,
+    "codename": "add_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 74,
+  "fields": {
+    "name": "Can change social application",
+    "content_type": 19,
+    "codename": "change_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 75,
+  "fields": {
+    "name": "Can delete social application",
+    "content_type": 19,
+    "codename": "delete_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 76,
+  "fields": {
+    "name": "Can view social application",
+    "content_type": 19,
+    "codename": "view_socialapp"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 77,
+  "fields": {
+    "name": "Can add social application token",
+    "content_type": 20,
+    "codename": "add_socialtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 78,
+  "fields": {
+    "name": "Can change social application token",
+    "content_type": 20,
+    "codename": "change_socialtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 79,
+  "fields": {
+    "name": "Can delete social application token",
+    "content_type": 20,
+    "codename": "delete_socialtoken"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 80,
+  "fields": {
+    "name": "Can view social application token",
+    "content_type": 20,
+    "codename": "view_socialtoken"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$t7bnABnRIH885IJakbJd1I$19GHkYoU6IsTvWj11U1eMPJgUUscsGVIYjSsg8pH07Q=",
+    "last_login": "2026-04-02T10:19:56.008Z",
+    "is_superuser": true,
+    "username": "sakshyam69",
+    "first_name": "",
+    "last_name": "",
+    "email": "sakshyam69@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-03-29T14:16:42.083Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$Gf1zx6KkzrDpSubeU9iIja$dahdVhJZif81AjpV2fvRfYIzXDUQiBvonWGATZ7wHuQ=",
+    "last_login": "2026-05-03T18:26:10.095Z",
+    "is_superuser": false,
+    "username": "sakshyam73",
+    "first_name": "",
+    "last_name": "",
+    "email": "sakshyam73@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-29T16:35:13.433Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 12,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$OB2PHncgkQcJFrv3yT4biC$hhTCAVMhRdEg7mvDiAYch/AHAc8v7ZXJAk7QH2V/pMY=",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "sakshyam112",
+    "first_name": "",
+    "last_name": "",
+    "email": "sakshyam112@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-29T17:50:19.544Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 13,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$AHokUIL6jMzRyGhC4R740v$xd4PZQ8YPBL4rBw/CZX8JvNsy5U2ePqe3kCCNpCIknY=",
+    "last_login": "2026-04-30T10:50:54.069Z",
+    "is_superuser": false,
+    "username": "sakshyam122",
+    "first_name": "",
+    "last_name": "",
+    "email": "sakshyam122@gmail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-03-29T17:51:24.955Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "amazon_app",
+    "model": "cart"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "amazon_app",
+    "model": "products"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "products",
+    "model": "products"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "amazonapp",
+    "model": "cart"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "amazonapp",
+    "model": "products"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "amazon_app",
+    "model": "orderitem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "amazon_app",
+    "model": "order"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "authtoken",
+    "model": "token"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "authtoken",
+    "model": "tokenproxy"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "account",
+    "model": "emailaddress"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 17,
+  "fields": {
+    "app_label": "account",
+    "model": "emailconfirmation"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 18,
+  "fields": {
+    "app_label": "socialaccount",
+    "model": "socialaccount"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 19,
+  "fields": {
+    "app_label": "socialaccount",
+    "model": "socialapp"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 20,
+  "fields": {
+    "app_label": "socialaccount",
+    "model": "socialtoken"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "1rwi0q3u77y8zby5q70bx3go50207dd8",
+  "fields": {
+    "session_data": ".eJxVjMEOgjAQRP-lZ0N2y7a43vRHmu22CURSEmlPxH8XDAc9zpuZt5kgrY6hrfkVpmRuBtFcfmEUfeZyNDLPB-5EdWmldt_NWa_dfU-51EmlTkt5nK8_1SjruHt6hMwe4RrZOwEiFUV2ntkTWiA7eNLYg00aybIFxsTRZ5sTpQGdeX8AocY7HA:1w7oDE:fgLv4D4k3P1eW4B1VOJGP-BUipGjy_BDPnG-j_zCdBc",
+    "expire_date": "2026-04-15T05:33:56.386Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "4bab40urcfuci26ufbqvgsw7sms56n1r",
+  "fields": {
+    "session_data": ".eJxVjMEOgjAQRP-lZ0N2y7a43vRHmu22CURSEmlPxH8XDAc9zpuZt5kgrY6hrfkVpmRuBtFcfmEUfeZyNDLPB-5EdWmldt_NWa_dfU-51EmlTkt5nK8_1SjruHt6hMwe4RrZOwEiFUV2ntkTWiA7eNLYg00aybIFxsTRZ5sTpQGdeX8AocY7HA:1w7pCa:NHPhuf3ZuGowCzlkbDSNnvDPgWod2IzrQRSKhQViSPM",
+    "expire_date": "2026-04-15T06:37:20.776Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "7wlfuncvge1b6qv4jamu5h234i9thosj",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYKFCX7j0DGWZAqoYmpV0Z765NutDtf-_9l4i4rTVuPS9xYnEWVpx-t4T0yG0HfMd2myXNbV2mJHdFHrTL68z5eTncv4OKvX5rVIHAGqfMoIGKxgSA3mVkrWkMxY8YAkKyxjpSDr024CzgULgEz0q8P86vN14:1vyvuN:SnTdQBgn60zBOy12GkGRMO5NiuSVRnsWJkeCLJ2azuQ",
+    "expire_date": "2026-03-21T17:57:47.366Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "8ztt075f3w8d1ye9ufpiqv34vdvh9vzn",
+  "fields": {
+    "session_data": ".eJxVjMEOgjAQRP-lZ0N2y7a43vRHmu22CURSEmlPxH8XDAc9zpuZt5kgrY6hrfkVpmRuBtFcfmEUfeZyNDLPB-5EdWmldt_NWa_dfU-51EmlTkt5nK8_1SjruHt6hMwe4RrZOwEiFUV2ntkTWiA7eNLYg00aybIFxsTRZ5sTpQGdeX8AocY7HA:1w7oDF:rmdqGV79E_bjDZOYr3dm_4CJRwIaWGEpAWaPfMHYZdg",
+    "expire_date": "2026-04-15T05:33:57.533Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "avy2hr0y27h3riwq7veke4hh87719h3n",
+  "fields": {
+    "session_data": ".eJxVjMEOgjAQRP-lZ0N2y7a43vRHmu22CURSEmlPxH8XDAc9zpuZt5kgrY6hrfkVpmRuBtFcfmEUfeZyNDLPB-5EdWmldt_NWa_dfU-51EmlTkt5nK8_1SjruHt6hMwe4RrZOwEiFUV2ntkTWiA7eNLYg00aybIFxsTRZ5sTpQGdeX8AocY7HA:1w7stX:6FcN15cBoOuHLjNQRYMmLv3I6T23kF0rr2oOsUD0S4w",
+    "expire_date": "2026-04-15T10:33:55.194Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "b7h1vrncgqdz6wk13i21wjtmljn32b18",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pACAzgu3XsGMgNUqgaS0q6Md9eaLnT73vv_KQKtSwlrz3OYkjgJJQ6_jCnec91EulG9NhlbXeaJ5ZbI3XZ5aSk_znv7d1Col88arLNGJ9AWVWLEERTHAVmz-5KR2ILTYBQoi_GI3mtwdjCe0LAn8XoDt3o2ig:1uRabb:kAzUXDzvCZztiT1vTixip2wJ3GwMVtuRhVBPMezxk-I",
+    "expire_date": "2025-07-01T18:00:19.571Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "ctu9d1eaqfdfhj1s5a25ua023jjo3e2i",
+  "fields": {
+    "session_data": ".eJxVjMEOgjAQRP-lZ0N2y7a43vRHmu22CURSEmlPxH8XDAc9zpuZt5kgrY6hrfkVpmRuBtFcfmEUfeZyNDLPB-5EdWmldt_NWa_dfU-51EmlTkt5nK8_1SjruHt6hMwe4RrZOwEiFUV2ntkTWiA7eNLYg00aybIFxsTRZ5sTpQGdeX8AocY7HA:1w8FLu:dX6ds_75cSZDl_c2z9nTN5VY3jnLSTaY-TeYybd1anY",
+    "expire_date": "2026-04-16T10:32:42.914Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "dgjtprdm3925d639dmtycdrcqaimsqf4",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYKFCX7j0DGWZAqoYmpV0Z765NutDtf-_9l4i4rTVuPS9xYnEWVpx-t4T0yG0HfMd2myXNbV2mJHdFHrTL68z5eTncv4OKvX5rVIHAGqfMoIGKxgSA3mVkrWkMxY8YAkKyxjpSDr024CzgULgEz0q8P86vN14:1vvGLT:Oon2F1tMZDSiLt7Kkq0uO3BJ2wsOgaec70m0cRfR-j8",
+    "expire_date": "2026-03-11T14:58:35.675Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "eq5bpncwu6y9y4y0uw0kpmkd4e29o9jp",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hAYKFCX7j0DGWZAqoYmpV0Z765NutDtf-_9l4i4rTVuPS9xYnEWVpx-t4T0yG0HfMd2myXNbV2mJHdFHrTL68z5eTncv4OKvX5rVIHAGqfMoIGKxgSA3mVkrWkMxY8YAkKyxjpSDr024CzgULgEz0q8P86vN14:1vvGPz:CIASMqMPZOQ8ptv8hkTiKqOK-jMrQh6PIo1TEMhjdLY",
+    "expire_date": "2026-03-11T15:03:15.345Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "gf956tdmjsgxzwboad3gfbh7dx5fn3t0",
+  "fields": {
+    "session_data": ".eJxVjMEOgjAQRP-lZ0N2y7a43vRHmu22CURSEmlPxH8XDAc9zpuZt5kgrY6hrfkVpmRuBtFcfmEUfeZyNDLPB-5EdWmldt_NWa_dfU-51EmlTkt5nK8_1SjruHt6hMwe4RrZOwEiFUV2ntkTWiA7eNLYg00aybIFxsTRZ5sTpQGdeX8AocY7HA:1w7p9b:MQaRhcYa8xGkSRdhzAaS9LAhVuxWVgyjk2gWHY4dBFY",
+    "expire_date": "2026-04-15T06:34:15.977Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "lxqfckjlo7rja1o3cvwp0vu67694pnzr",
+  "fields": {
+    "session_data": ".eJxVjMEOgjAQRP-lZ0N2y7a43vRHmu22CURSEmlPxH8XDAc9zpuZt5kgrY6hrfkVpmRuBtFcfmEUfeZyNDLPB-5EdWmldt_NWa_dfU-51EmlTkt5nK8_1SjruHt6hMwe4RrZOwEiFUV2ntkTWiA7eNLYg00aybIFxsTRZ5sTpQGdeX8AocY7HA:1w8BTz:78YKlqlSd42ROUnqHktRcBOzZS_ENJq_u-8Vw7oNLy8",
+    "expire_date": "2026-04-16T06:24:47.607Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "m0clacgeaqu8b94zd8bcyw5c6lz20olg",
+  "fields": {
+    "session_data": ".eJxVjMEOgjAQRP-lZ0N2y7a43vRHmu22CURSEmlPxH8XDAc9zpuZt5kgrY6hrfkVpmRuBtFcfmEUfeZyNDLPB-5EdWmldt_NWa_dfU-51EmlTkt5nK8_1SjruHt6hMwe4RrZOwEiFUV2ntkTWiA7eNLYg00aybIFxsTRZ5sTpQGdeX8AocY7HA:1w7yZ8:IiSDezFpXnZSHKM4V_-vSgOV0mih4R6C9Qnyez20Dos",
+    "expire_date": "2026-04-15T16:37:14.182Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "odf39ubgbz1385gu1jbq6z9ngeld2is3",
+  "fields": {
+    "session_data": ".eJxVjMEOwiAQRP-FsyF0C5R69N5vIAu7SNVAUtqT8d9tkx40c5v3Zt7C47ZmvzVe_EziKkBcfruA8cnlAPTAcq8y1rIuc5CHIk_a5FSJX7fT_TvI2PK-jj2T0Xv6ztIA1kblRjDaclKEQUcKoF00Y6-HAOxYg0pIhqFD41IQny_RkzfS:1ueRag:eM_l6W0ZdFqDVVtnlsGpxnUi0OcEqJDwAOqB09FHJ-w",
+    "expire_date": "2025-08-06T05:00:30.366Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "po0gqgjwh9sodtsphmmvvho160ypt1c5",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2hDaYbC4dN8zNAMzSNVAUtqV8e7apAvd_vfef6mJtjVPW5NlmlldFKjT7xYoPqTsgO9UblXHWtZlDnpX9EGbHivL83q4fweZWv7W2NuYjBEeHHXgBoyYekoCKNa7ZFIURzEYIC8-sOAZnWMizxY6A6jeH_eXOGQ:1vMNH5:LhHwtutGbSN3UkMxFDrmdEmZdMaG15fe9-W1JayVTjo",
+    "expire_date": "2025-12-05T09:17:51.470Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "y73q1sf34dtljkemmz5acxx6s8x227mv",
+  "fields": {
+    "session_data": ".eJxVjMEOgjAQRP-lZ0N2y7a43vRHmu22CURSEmlPxH8XDAc9zpuZt5kgrY6hrfkVpmRuBtFcfmEUfeZyNDLPB-5EdWmldt_NWa_dfU-51EmlTkt5nK8_1SjruHt6hMwe4RrZOwEiFUV2ntkTWiA7eNLYg00aybIFxsTRZ5sTpQGdeX8AocY7HA:1w7oDG:Dwjj8KArIidjmPx_MKYrVwJYcafafy3TKI17pzvpg6s",
+    "expire_date": "2026-04-15T05:33:58.571Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "zbg2c0du15j4gcb1xi8zke0orxrxujf3",
+  "fields": {
+    "session_data": ".eJxVjMEOgjAQRP-lZ0N2y7a43vRHmu22CURSEmlPxH8XDAc9zpuZt5kgrY6hrfkVpmRuBtFcfmEUfeZyNDLPB-5EdWmldt_NWa_dfU-51EmlTkt5nK8_1SjruHt6hMwe4RrZOwEiFUV2ntkTWiA7eNLYg00aybIFxsTRZ5sTpQGdeX8AocY7HA:1w8F6K:KYbBo41mdsvKlROozRW0YEzJ9riR5wtVPDZDFj4xyLs",
+    "expire_date": "2026-04-16T10:16:36.344Z"
+  }
+},
+{
+  "model": "amazon_app.cart",
+  "pk": "02e3a47e-dd68-467e-9f71-8bf6f723fdae",
+  "fields": {
+    "user_id": 13,
+    "quantity": 1,
+    "delivery_option_id": "1"
+  }
+},
+{
+  "model": "amazon_app.cart",
+  "pk": "0d7f9afa-2efe-4fd9-b0fd-ba5663e0a524",
+  "fields": {
+    "user_id": 11,
+    "quantity": 6,
+    "delivery_option_id": "3"
+  }
+},
+{
+  "model": "amazon_app.cart",
+  "pk": "10ed8504-57db-433c-b0a3-fc71a35c88a1",
+  "fields": {
+    "user_id": 11,
+    "quantity": 1,
+    "delivery_option_id": "1"
+  }
+},
+{
+  "model": "amazon_app.cart",
+  "pk": "15b6fc6f-327a-4ec4-896f-486349e85a3d",
+  "fields": {
+    "user_id": 11,
+    "quantity": 1,
+    "delivery_option_id": "2"
+  }
+},
+{
+  "model": "amazon_app.cart",
+  "pk": "1c079479-8586-494f-ab53-219325432536",
+  "fields": {
+    "user_id": 13,
+    "quantity": 1,
+    "delivery_option_id": "1"
+  }
+},
+{
+  "model": "amazon_app.cart",
+  "pk": "3fdfe8d6-9a15-4979-b459-585b0d0545b9",
+  "fields": {
+    "user_id": 11,
+    "quantity": 1,
+    "delivery_option_id": "2"
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "02e3a47e-dd68-467e-9f71-8bf6f723fdae",
+  "fields": {
+    "image": "images/products/blackout-curtains-black.jpg",
+    "name": "Blackout Curtains Set 42 x 84-Inch - Black, 2 Panels",
+    "stars": 4.0,
+    "count": 363,
+    "priceCents": 3099
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "04701903-bc79-49c6-bc11-1af7e3651358",
+  "fields": {
+    "image": "images/products/women-beach-sandals.jpg",
+    "name": "Women's Two Strap Buckle Sandals - Tan",
+    "stars": 4.0,
+    "count": 562,
+    "priceCents": 2499
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "0d7f9afa-2efe-4fd9-b0fd-ba5663e0a524",
+  "fields": {
+    "image": "images/products/coffeemaker-with-glass-carafe-black.jpg",
+    "name": "Coffeemaker with Glass Carafe and Reusable Filter - 25 Oz, Black",
+    "stars": 4.0,
+    "count": 1211,
+    "priceCents": 2250
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "10ed8504-57db-433c-b0a3-fc71a35c88a1",
+  "fields": {
+    "image": "images/products/knit-athletic-sneakers-pink.webp",
+    "name": "Waterproof Knit Athletic Sneakers - Pink",
+    "stars": 4.0,
+    "count": 89,
+    "priceCents": 3390
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "15b6fc6f-327a-4ec4-896f-486349e85a3d",
+  "fields": {
+    "image": "images/products/intermediate-composite-basketball.jpg",
+    "name": "Intermediate Size Basketball",
+    "stars": 4.0,
+    "count": 127,
+    "priceCents": 2095
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "19c6a64a-5463-4d45-9af8-e41140a4100c",
+  "fields": {
+    "image": "images/products/duvet-cover-set-blue-twin.jpg",
+    "name": "Duvet Cover Set with Zipper Closure",
+    "stars": 4.0,
+    "count": 456,
+    "priceCents": 2399
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "1c079479-8586-494f-ab53-219325432536",
+  "fields": {
+    "image": "images/products/men-athletic-shoes-green.jpg",
+    "name": "Men's Athletic Sneaker",
+    "stars": 4.0,
+    "count": 229,
+    "priceCents": 3890
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "36c64692-677f-4f58-b5ec-0dc2cf109e27",
+  "fields": {
+    "image": "images/products/floral-mixing-bowl-set.jpg",
+    "name": "10-Piece Mixing Bowl Set with Lids - Floral",
+    "stars": 5.0,
+    "count": 679,
+    "priceCents": 3899
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "3ebe75dc-64d2-4137-8860-1f5a963e534b",
+  "fields": {
+    "image": "images/products/6-piece-white-dinner-plate-set.jpg",
+    "name": "6 Piece White Dinner Plate Set",
+    "stars": 4.0,
+    "count": 37,
+    "priceCents": 2067
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "3fdfe8d6-9a15-4979-b459-585b0d0545b9",
+  "fields": {
+    "image": "images/products/liquid-laundry-detergent-plain.jpg",
+    "name": "Liquid Laundry Detergent, 110 Loads, 82.5 Fl Oz",
+    "stars": 4.0,
+    "count": 305,
+    "priceCents": 2899
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "4df68c27-fd59-4a6a-bbd1-e754ddb6d53c",
+  "fields": {
+    "image": "images/products/men-navigator-sunglasses-brown.jpg",
+    "name": "Men's Navigator Sunglasses Pilot",
+    "stars": 3.0,
+    "count": 42,
+    "priceCents": 1690
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "4e37dd03-3b23-4bc6-9ff8-44e112a92c64",
+  "fields": {
+    "image": "images/products/non-stick-cooking-set-15-pieces.webp",
+    "name": "Non-Stick Cookware Set, Pots, Pans and Utensils - 15 Pieces",
+    "stars": 4.0,
+    "count": 511,
+    "priceCents": 6797
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "4f4fbcc2-4e72-45cc-935c-9e13d79cc57f",
+  "fields": {
+    "image": "images/products/women-knit-ballet-flat-black.jpg",
+    "name": "Women's Knit Ballet Flat",
+    "stars": 4.0,
+    "count": 326,
+    "priceCents": 2640
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "54e0eccd-8f36-462b-b68a-8182611d9add",
+  "fields": {
+    "image": "images/products/black-2-slot-toaster.jpg",
+    "name": "2 Slot Toaster - Black",
+    "stars": 5.0,
+    "count": 2197,
+    "priceCents": 1899
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "58b4fc92-e98c-42aa-8c55-b6b79996769a",
+  "fields": {
+    "image": "images/products/knit-athletic-sneakers-gray.jpg",
+    "name": "Waterproof Knit Athletic Sneakers - Gray",
+    "stars": 4.0,
+    "count": 89,
+    "priceCents": 3390
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "5968897c-4d27-4872-89f6-5bcb052746d7",
+  "fields": {
+    "image": "images/products/women-chiffon-beachwear-coverup-black.jpg",
+    "name": "Women's Chiffon Beachwear Cover Up - Black",
+    "stars": 4.0,
+    "count": 235,
+    "priceCents": 2070
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "6b07d4e7-f540-454e-8a1e-363f25dbae7d",
+  "fields": {
+    "image": "images/products/facial-tissue-2-ply-18-boxes.jpg",
+    "name": "Ultra Soft Tissue 2-Ply - 18 Box",
+    "stars": 4.0,
+    "count": 99,
+    "priceCents": 2374
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "77919bbe-0e56-475b-adde-4f24dfed3a04",
+  "fields": {
+    "image": "images/products/luxury-tower-set-6-piece.jpg",
+    "name": "Luxury Towel Set - Graphite Gray",
+    "stars": 4.0,
+    "count": 144,
+    "priceCents": 3599
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "77a845b1-16ed-4eac-bdf9-5b591882113d",
+  "fields": {
+    "image": "images/products/countertop-blender-64-oz.jpg",
+    "name": "Countertop Blender - 64oz, 1400 Watts",
+    "stars": 4.0,
+    "count": 3,
+    "priceCents": 10747
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "82bb68d7-ebc9-476a-989c-c78a40ee5cd9",
+  "fields": {
+    "image": "images/products/men-slim-fit-summer-shorts-gray.jpg",
+    "name": "Men's Slim-Fit Summer Shorts",
+    "stars": 4.0,
+    "count": 160,
+    "priceCents": 1699
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "83d4ca15-0f35-48f5-b7a3-1ea210004f2e",
+  "fields": {
+    "image": "images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg",
+    "name": "Adults Plain Cotton T-Shirt - 2 Pack",
+    "stars": 4.0,
+    "count": 56,
+    "priceCents": 799
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "8a53b080-6d40-4a65-ab26-b24ecf700bce",
+  "fields": {
+    "image": "images/products/cotton-bath-towels-teal.webp",
+    "name": "100% Cotton Bath Towels - 2 Pack, Light Teal",
+    "stars": 4.0,
+    "count": 93,
+    "priceCents": 2110
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "8b5a2ee1-6055-422a-a666-b34ba28b76d4",
+  "fields": {
+    "image": "images/products/men-golf-polo-t-shirt-blue.jpg",
+    "name": "Men's Regular-Fit Quick-Dry Golf Polo Shirt",
+    "stars": 4.0,
+    "count": 2556,
+    "priceCents": 1599
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
+  "fields": {
+    "image": "images/products/6-piece-non-stick-baking-set.webp",
+    "name": "6-Piece Nonstick, Carbon Steel Oven Bakeware Baking Set",
+    "stars": 4.0,
+    "count": 175,
+    "priceCents": 3499
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "901eb2ca-386d-432e-82f0-6fb1ee7bf969",
+  "fields": {
+    "image": "images/products/blackout-curtain-set-beige.webp",
+    "name": "Blackout Curtains Set 4-Pack - Beige",
+    "stars": 4.0,
+    "count": 232,
+    "priceCents": 4599
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "a434b69f-1bc1-482d-9ce7-cd7f4a66ce8d",
+  "fields": {
+    "image": "images/products/vanity-mirror-silver.jpg",
+    "name": "Vanity Mirror with Heavy Base - Chrome",
+    "stars": 4.0,
+    "count": 130,
+    "priceCents": 1649
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "a45cfa0a-66d6-4dc7-9475-e2b01595f7d7",
+  "fields": {
+    "image": "images/products/women-french-terry-fleece-jogger-camo.jpg",
+    "name": "Women's Fleece Jogger Sweatpant",
+    "stars": 4.0,
+    "count": 248,
+    "priceCents": 2400
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "a82c6bac-3067-4e68-a5ba-d827ac0be010",
+  "fields": {
+    "image": "images/products/straw-sunhat.webp",
+    "name": "Straw Lifeguard Sun Hat",
+    "stars": 4.0,
+    "count": 215,
+    "priceCents": 2200
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "a93a101d-79ef-4cf3-a6cf-6dbe532a1b4a",
+  "fields": {
+    "image": "images/products/bathroom-rug.jpg",
+    "name": "Bathroom Bath Rug Mat 20 x 31 Inch - Grey",
+    "stars": 4.0,
+    "count": 119,
+    "priceCents": 1250
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "aaa65ef3-8d6f-4eb3-bc9b-a6ea49047d8f",
+  "fields": {
+    "image": "images/products/kitchen-paper-towels-30-pack.jpg",
+    "name": "2-Ply Kitchen Paper Towels - 30 Pack",
+    "stars": 4.0,
+    "count": 1045,
+    "priceCents": 5799
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "aad29d11-ea98-41ee-9285-b916638cac4a",
+  "fields": {
+    "image": "images/products/round-sunglasses-black.jpg",
+    "name": "Round Sunglasses",
+    "stars": 4.0,
+    "count": 30,
+    "priceCents": 1560
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "b0f17cc5-8b40-4ca5-9142-b61fe3d98c85",
+  "fields": {
+    "image": "images/products/women-stretch-popover-hoodie-black.jpg",
+    "name": "Women's Stretch Popover Hoodie",
+    "stars": 4.0,
+    "count": 2465,
+    "priceCents": 1374
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "b86ddc8b-3501-4b17-9889-a3bad6fb585f",
+  "fields": {
+    "image": "images/products/trash-can-with-foot-pedal-50-liter.jpg",
+    "name": "Trash Can with Foot Pedal - Brushed Stainless Steel",
+    "stars": 4.0,
+    "count": 2286,
+    "priceCents": 8300
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "bc2847e9-5323-403f-b7cf-57fde044a955",
+  "fields": {
+    "image": "images/products/men-cozy-fleece-zip-up-hoodie-red.jpg",
+    "name": "Men's Full-Zip Hooded Fleece Sweatshirt",
+    "stars": 4.0,
+    "count": 3157,
+    "priceCents": 2400
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "c2a82c5e-aff4-435f-9975-517cfaba2ece",
+  "fields": {
+    "image": "images/products/electric-glass-and-steel-hot-water-kettle.webp",
+    "name": "Electric Glass and Steel Hot Tea Water Kettle - 1.7-Liter",
+    "stars": 5.0,
+    "count": 846,
+    "priceCents": 3074
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "d2785924-743d-49b3-8f03-ec258e640503",
+  "fields": {
+    "image": "images/products/women-chunky-beanie-gray.webp",
+    "name": "Women's Chunky Cable Beanie - Gray",
+    "stars": 5.0,
+    "count": 83,
+    "priceCents": 1250
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "d339adf3-e004-4c20-a120-40e8874c66cb",
+  "fields": {
+    "image": "images/products/double-elongated-twist-french-wire-earrings.webp",
+    "name": "Double Oval Twist French Wire Earrings - Gold",
+    "stars": 4.0,
+    "count": 117,
+    "priceCents": 2400
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "d37a651a-d501-483b-aae6-a9659b0757a0",
+  "fields": {
+    "image": "images/products/round-airtight-food-storage-containers.jpg",
+    "name": "Round Airtight Food Storage Containers - 5 Piece",
+    "stars": 4.0,
+    "count": 126,
+    "priceCents": 2899
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "dd82ca78-a18b-4e2a-9250-31e67412f98d",
+  "fields": {
+    "image": "images/products/plain-hooded-fleece-sweatshirt-yellow.jpg",
+    "name": "Plain Hooded Fleece Sweatshirt",
+    "stars": 4.0,
+    "count": 317,
+    "priceCents": 2400
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+  "fields": {
+    "image": "images/products/athletic-cotton-socks-6-pairs.jpg",
+    "name": "Black and Gray Athletic Cotton Socks - 6 Pairs",
+    "stars": 4.0,
+    "count": 87,
+    "priceCents": 1090
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "e4f64a65-1377-42bc-89a5-e572d19252e2",
+  "fields": {
+    "image": "images/products/sky-flower-stud-earrings.webp",
+    "name": "Sterling Silver Sky Flower Stud Earrings",
+    "stars": 4.0,
+    "count": 52,
+    "priceCents": 1799
+  }
+},
+{
+  "model": "amazon_app.products",
+  "pk": "ee1f7c56-f977-40a4-9642-12ba5072e2b0",
+  "fields": {
+    "image": "images/products/men-chino-pants-beige.jpg",
+    "name": "Men's Classic-fit Pleated Chino Pants",
+    "stars": 4.0,
+    "count": 9017,
+    "priceCents": 2290
+  }
+},
+{
+  "model": "amazon_app.order",
+  "pk": "11191c6f-23ec-45a0-8128-44455471412c",
+  "fields": {
+    "user_id": 11,
+    "order_placed_date": "2026-04-02T10:20:29.800Z",
+    "total_price": "268.19"
+  }
+},
+{
+  "model": "amazon_app.order",
+  "pk": "631bc452-7c4c-4807-9e8e-a71ae6020ac9",
+  "fields": {
+    "user_id": 11,
+    "order_placed_date": "2026-04-30T06:58:46.324Z",
+    "total_price": "268.19"
+  }
+},
+{
+  "model": "amazon_app.order",
+  "pk": "c964e0fd-cf0f-45d2-a7f0-8e8092ba24be",
+  "fields": {
+    "user_id": 11,
+    "order_placed_date": "2026-04-30T06:58:50.549Z",
+    "total_price": "268.19"
+  }
+},
+{
+  "model": "amazon_app.order",
+  "pk": "dffb86e0-c296-43cb-85bc-5eab44ccae04",
+  "fields": {
+    "user_id": 11,
+    "order_placed_date": "2026-04-30T06:58:49.422Z",
+    "total_price": "268.19"
+  }
+}
+]

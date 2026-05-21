@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Registration</title>
+  
+  <link rel="stylesheet" href="../static/styles/shared/general.css">
+  <link rel="stylesheet" href="../static/styles/pages/login.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-logo-container">
+      <img src="../static/images/amazon-logo.png" alt="Amazon Logo" class="auth-logo">
+    </div>
+
+    <div class="auth-card">
+      <h1 class="auth-title">Create account</h1>
+      
+      <form class="auth-form" method="post">
+        {% csrf_token %}
+        <div class="input-group">
+          <label for="name">Your name</label>
+          <input type="text" id="username" name="username" required placeholder="First and last name">
+        </div>
+
+        <div class="input-group">
+          <label for="email">Mobile number or email</label>
+          <input type="text" id="email" name="email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required placeholder="At least 6 characters">
+          <div class="password-hint">Passwords must be at least 6 characters.</div>
+        </div>
+
+        <div class="input-group">
+          <label for="password-confirm">Re-enter password</label>
+          <input type="password" id="password-confirm" name="passwordconfirm" required>
+        </div>
+
+        <button class="btn-primary js-login-button">Continue</button>
+        
+        <div class="auth-terms">
+          By creating an account, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+        </div>
+      </form>
+
+      <div class="auth-divider">
+        <span>Already have an account?</span>
+      </div>
+
+      <a href="{% url 'login'%}" class="btn-secondary text-center block">Sign in</a>
+    </div>
+
+    <footer class="auth-footer">
+      <div class="footer-links">
+        <a href="#">Conditions of Use</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Help</a>
+      </div>
+      <p class="footer-copyright">© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+    </footer>
+  </div>
+
+  <script src="{% static 'scripts/register.js'%}" type="module"></script>
+</body>
+</html>

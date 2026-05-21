@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon Login</title>
+  
+  <!-- Reuse existing general & login css -->
+  <link rel="stylesheet" href="../static/styles/shared/general.css">
+  <link rel="stylesheet" href="../static/styles/pages/login.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-logo-container">
+      <img src="../static/images/amazon-logo.png" alt="Amazon Logo" class="auth-logo">
+    </div>
+
+    <div class="auth-card">
+      <h1 class="auth-title">Sign in</h1>
+      
+      <form method = "post" class="auth-form">
+          {% csrf_token %}
+        <div class="input-group">
+          <label for="email">Email or mobile phone number</label>
+          <input type="text" id="email" name="email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required>
+        </div>
+
+        <button type="submit" class="btn-primary js-login-button" style="margin-bottom: 12px;">Continue</button>
+        
+        <div class="auth-terms">
+          By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a href="#">Privacy Notice</a>.
+        </div>
+      </form>
+
+      <div class="auth-divider">
+        <span>New to Amazon?</span>
+      </div>
+
+      <a href="{% url 'register'%}" class="btn-secondary text-center block" style="margin-bottom: 12px;">Create your Amazon account</a>
+      
+      <div class="auth-divider">
+        <span>Or sign in with</span>
+      </div>
+
+      <div class="social-login-group">
+        <button class="btn-social google">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="Google logo" class="social-icon">
+          Continue with Google
+        </button>
+        <button class="btn-social amazon">
+          <img src="../static/images/amazon-mobile-logo.png" alt="Amazon mini logo" class="social-icon">
+          Continue with Amazon
+        </button>
+      </div>
+
+    </div>
+
+    <footer class="auth-footer">
+      <div class="footer-links">
+        <a href="#">Conditions of Use</a>
+        <a href="#">Privacy Notice</a>
+        <a href="#">Help</a>
+      </div>
+      <p class="footer-copyright">© 1996-2023, Amazon.com, Inc. or its affiliates</p>
+    </footer>
+
+    <script src="{% static 'scripts/login.js'%}" type="module"></script>
+  </div>
+</body>
+</html>
