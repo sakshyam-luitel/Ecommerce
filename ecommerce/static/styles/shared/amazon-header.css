@@ -1,5 +1,5 @@
 .amazon-header {
-  background-color: #9b66f2;
+  background-color: #0c4a6e;
   color: white;
   padding-left: 15px;
   padding-right: 15px;
@@ -14,7 +14,7 @@
   right: 0;
   height: 60px;
   z-index: 1000;
-  border-bottom: 1px solid #8a51e6;
+  border-bottom: 2px solid #08334f;
 }
 
 .amazon-header-left-section {
@@ -112,7 +112,7 @@
 }
 
 .cart-quantity {
-  color: #fff;
+  color: #f43f5e;
   font-size: 16px;
   font-weight: 700;
 

@@ -2,7 +2,7 @@
   height: 60px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: #9b66f2;
+  background-color: #0c4a6e;
 
   display: flex;
   justify-content: center;
@@ -12,7 +12,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  border-bottom: 1px solid #8a51e6;
+  border-bottom: 2px solid #08334f;
 }
 
 .header-content {
