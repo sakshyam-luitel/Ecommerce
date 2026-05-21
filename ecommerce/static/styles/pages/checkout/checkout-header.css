@@ -2,7 +2,7 @@
   height: 60px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: white;
+  background-color: #9b66f2;
 
   display: flex;
   justify-content: center;
@@ -12,6 +12,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  border-bottom: 1px solid #8a51e6;
 }
 
 .header-content {
@@ -106,13 +107,13 @@
   display: flex; 
   align-items: center; 
   gap: 6px; 
-  background: #f7ebae; 
-  border: 1px solid #FCD200; 
+  background: white; 
+  border: 1px solid #ccc; 
   border-radius: 4px; 
   font-family: Roboto; 
   font-weight: 700; 
   font-size: 13px; 
-  color: #0F1111; 
+  color: #333; 
   cursor: pointer; 
   padding: 6px 12px; 
   box-shadow: 0 2px 5px rgba(213,217,217,0.5); 

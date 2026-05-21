@@ -96,12 +96,12 @@ body {
 /* Buttons */
 .btn-primary {
   width: 100%;
-  background: #f0c14b;
-  border-color: #a88734 #9c7e31 #846a29;
+  background: #9b66f2;
+  border-color: #8a51e6;
   border-style: solid;
   border-width: 1px;
-  border-radius: 3px;
-  color: #111;
+  border-radius: 8px;
+  color: white;
   cursor: pointer;
   display: inline-block;
   padding: 0;
@@ -111,10 +111,11 @@ body {
   height: 31px;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
   margin-bottom: 15px;
+  font-weight: bold;
 }
 
 .btn-primary:hover {
-  background: #f4d078;
+  background: #a87ffb;
 }
 
 .btn-secondary {
