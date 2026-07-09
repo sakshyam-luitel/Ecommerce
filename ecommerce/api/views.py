@@ -1,7 +1,6 @@
 import uuid
 
 from django.shortcuts import render
-#from django.views.decorators.csrf import csrf_exempt
 from .serializers import ProductsSerializer , CartSerializer , OrderSerializer, OrderItemSerializer
 
 
@@ -37,7 +36,6 @@ def cart(request):
             return Response(serializer.data , status = status.HTTP_201_CREATED)
         return Response(serializer.errors , status = status.HTTP_400_BAD_REQUEST)
     elif request.method == "GET":
-        cart = Cart.objects.filter(user_id = request.user)
         serializer = CartSerializer(cart , many = True)
         return Response(serializer.data , status = status.HTTP_200_OK)
     elif request.method == 'DELETE':

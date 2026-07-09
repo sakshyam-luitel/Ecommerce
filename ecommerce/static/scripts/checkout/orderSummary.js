@@ -21,7 +21,7 @@ import { renderPaymentSummary } from "./paymentSummary.js";
 export async function renderOrderSummary(cartData) {
   let cartSummaryHTML = "";
 
-  // ✅ FIXED PART (forEach -> for...of)
+  // FIXED PART (forEach -> for...of)
   for (const cartItem of cartData) {
     const productId = (cartItem.productId || cartItem.product_id);
     const matchingProduct = await getProduct(productId);
