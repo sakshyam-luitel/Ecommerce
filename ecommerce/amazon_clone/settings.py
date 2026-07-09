@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [
     'vercel.app',
     "localhost",
     "127.0.0.1",
+    'http://localhost:5173',
     '*',
     '.onrender.com'
 ]
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'amazon_app',
     'api',
 
@@ -74,6 +76,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware"
+]
+
+CORS_ALLOWED_ORIGIN = [
+    'http://localhost:5173',
 ]
 
 ROOT_URLCONF = 'amazon_clone.urls'
@@ -100,18 +108,18 @@ WSGI_APPLICATION = 'amazon_clone.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': os.environ.get('DB_NAME'),
-    #     'PASSWORD' : os.environ.get('DB_PASSWORD'),
-    #     'USER' : os.environ.get('DB_USER'),
-    #     'HOST' : os.environ.get('DB_HOST'),
-    #     'PORT' : os.environ.get('DB_PORT'),
-    # }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('DB_NAME'),
+        'PASSWORD' : os.environ.get('DB_PASSWORD'),
+        'USER' : os.environ.get('DB_USER'),
+        'HOST' : os.environ.get('DB_HOST'),
+        'PORT' : os.environ.get('DB_PORT'),
+    }
 
-    'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL')
-    )
+    # 'default': dj_database_url.config(
+    #     default=os.environ.get('DATABASE_URL')
+    # )
 }
 
 
