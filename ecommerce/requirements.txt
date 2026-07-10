@@ -41,6 +41,7 @@ requests==2.33.0
 sqlparse==0.5.3
 tzdata==2025.2
 urllib3==2.6.3
+dj-cors-headers == 4.9.0
 
 # production
 gunicorn==22.0.0
