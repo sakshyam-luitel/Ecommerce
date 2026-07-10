@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
+    # 'corsheaders',
     'amazon_app',
     'api',
 
@@ -80,9 +80,9 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware"
 ]
 
-CORS_ALLOWED_ORIGIN = [
-    'http://localhost:5173',
-]
+# CORS_ALLOWED_ORIGIN = [
+#     'http://localhost:5173',
+# ]
 
 ROOT_URLCONF = 'amazon_clone.urls'
 
