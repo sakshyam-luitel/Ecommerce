@@ -1,4 +1,11 @@
 .main {
+  background: transparent;
+  border-radius: 18px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.main {
   max-width: 1100px;
   padding-left: 30px;
   padding-right: 30px;
@@ -18,6 +25,12 @@
   font-weight: 700;
   font-size: 22px;
   margin-bottom: 18px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #1a1a1a 45%, #B4121B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #1a1a1a; /* fallback */
+  width: fit-content;
 }
 
 .checkout-grid {
@@ -44,13 +57,44 @@
 
 .cart-item-container,
 .payment-summary {
-  border: 1.5px solid #bbb;
+  background: #ffffff;
+  border: 1px solid rgba(180, 18, 27, 0.22);
   border-radius: 12px;
   padding: 18px;
+  box-shadow: 0 10px 26px rgba(180, 18, 27, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .cart-item-container {
   margin-bottom: 12px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  animation: checkout-item-in 0.5s ease backwards;
+}
+
+.cart-item-container:nth-child(1) { animation-delay: 0.05s; }
+.cart-item-container:nth-child(2) { animation-delay: 0.12s; }
+.cart-item-container:nth-child(3) { animation-delay: 0.19s; }
+.cart-item-container:nth-child(4) { animation-delay: 0.26s; }
+.cart-item-container:nth-child(5) { animation-delay: 0.33s; }
+
+.cart-item-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(180, 18, 27, 0.16);
+  border-color: #B4121B;
+}
+
+.payment-summary {
+  animation: checkout-summary-in 0.6s ease backwards;
+  animation-delay: 0.15s;
+}
+
+@keyframes checkout-item-in {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes checkout-summary-in {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
 
 .payment-summary {
@@ -69,7 +113,7 @@
 }
 
 .delivery-date {
-  color: rgb(0, 118, 0);
+  color: #B4121B;
   font-weight: 700;
   font-size: 19px;
   margin-top: 5px;
@@ -110,7 +154,7 @@
 }
 
 .product-price {
-  color: rgb(177, 39, 4);
+  color: #B4121B;
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -126,7 +170,7 @@
        an element is placed in is determined by the order
        of the elements in the HTML. grid-column overrides
        this default ordering).
-       
+
        / span 2 means this element will take up 2 columns
        in the grid (Normally, each element takes up 1
        column in the grid). */
@@ -144,6 +188,15 @@
   grid-template-columns: 24px 1fr;
   margin-bottom: 12px;
   cursor: pointer;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.delivery-option:hover {
+  background-color: rgba(180, 18, 27, 0.06);
+  border-color: rgba(180, 18, 27, 0.35);
 }
 
 .delivery-option-input {
@@ -152,7 +205,7 @@
 }
 
 .delivery-option-date {
-  color: rgb(0, 118, 0);
+  color: #B4121B;
   font-weight: 500;
   margin-bottom: 3px;
 }
@@ -184,7 +237,7 @@
 }
 
 .subtotal-row .payment-summary-money {
-  border-top: 1.5px solid #bbb;
+  border-top: 1.5px solid #000000;
 }
 
 .subtotal-row div {
@@ -192,11 +245,11 @@
 }
 
 .total-row {
-  color: rgb(177, 39, 4);
+  color: #B4121B;
   font-weight: 700;
   font-size: 18px;
 
-  border-top: 1.5px solid #bbb;
+  border-top: 1.5px solid #000000;
   padding-top: 18px;
 }
 
@@ -222,6 +275,18 @@
 }
 .is-editing-input .save-quantity-link{
   display: initial;
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .cart-item-container,
+  .payment-summary {
+    animation: none;
+    transition: none;
+  }
+  .cart-item-container:hover {
+    transform: none;
+  }
 }
 
 /*.is-editing-quantity .quantity-label {

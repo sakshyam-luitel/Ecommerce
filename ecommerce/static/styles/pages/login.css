@@ -1,10 +1,11 @@
 /* Auth Pages Base Styles (Login, Register) */
 body {
   font-family: Arial, sans-serif;
-  background-color: #fff;
+  background: linear-gradient(135deg, #fff0f1 0%, #ffffff 45%, #ffe3e6 100%);
+  background-attachment: fixed;
   margin: 0;
   padding: 0;
-  color: #111;
+  color: #000000;
 }
 
 .auth-container {
@@ -29,11 +30,31 @@ body {
 /* Card Styles */
 .auth-card {
   width: 350px;
-  border: 1.5px solid #bbb;
-  border-radius: 8px;
+  border: 1px solid rgba(180, 18, 27, 0.25);
+  border-radius: 12px;
   padding: 20px 26px;
   box-sizing: border-box;
   background-color: #fff;
+  box-shadow: 0 18px 45px rgba(180, 18, 27, 0.14), 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Entrance scoped to the standalone login/register pages only, so it does not
+   fight the modal entrance animation on the intro page (those cards also carry
+   .intro-login-card and live inside .intro-modal-shell). backwards fill keeps
+   the card hidden until the animation starts, then hands styling back. */
+.auth-container > .auth-card {
+  animation: auth-card-in 0.5s ease backwards;
+}
+
+@keyframes auth-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @media (max-width: 400px) {
@@ -45,16 +66,53 @@ body {
 }
 
 .auth-title {
-  font-weight: 400;
+  font-weight: 700;
   font-size: 28px;
   margin-top: 0;
   margin-bottom: 20px;
   line-height: 1.2;
+  background: linear-gradient(135deg, #ff416c 0%, #B4121B 60%, #7f0d13 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #B4121B; /* fallback if background-clip unsupported */
+  width: fit-content;
 }
 
 /* Form Styles */
 .auth-form {
   margin-bottom: 22px;
+}
+
+/* Inline auth error box (replaces alert()). Injected by utils/formError.js. */
+.auth-error {
+  display: none;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border: 1px solid #B4121B;
+  border-left-width: 4px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #fff0f1 0%, #ffe3e6 100%);
+  color: #7f0d13;
+  font-size: 13px;
+  line-height: 1.45;
+  box-shadow: 0 4px 12px rgba(180, 18, 27, 0.15);
+}
+
+.auth-error.is-visible {
+  display: block;
+  animation: auth-error-in 0.25s ease;
+}
+
+@keyframes auth-error-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-error.is-visible {
+    animation: none;
+  }
 }
 
 .input-group {
@@ -83,8 +141,8 @@ body {
 }
 
 .input-group input:focus {
-  border-color: #e77600;
-  box-shadow: 0 0 3px 2px rgba(228, 121, 17, 0.5);
+  border-color: #B4121B;
+  box-shadow: 0 0 3px 2px rgba(180, 18, 27, 0.45);
 }
 
 .password-hint {
@@ -96,8 +154,10 @@ body {
 /* Buttons */
 .btn-primary {
   width: 100%;
-  background: #10b981;
-  border-color: #059669;
+  background: linear-gradient(135deg, #ff416c 0%, #B4121B 55%, #7f0d13 100%);
+  background-size: 180% 180%;
+  background-position: 0% 50%;
+  border-color: #7f0d13;
   border-style: solid;
   border-width: 1px;
   border-radius: 8px;
@@ -109,23 +169,34 @@ body {
   text-decoration: none;
   font-size: 13px;
   height: 31px;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset;
+  box-shadow: 0 4px 12px rgba(180, 18, 27, 0.35);
   margin-bottom: 15px;
   font-weight: bold;
+  transition: transform 0.18s ease, box-shadow 0.25s ease,
+    background-position 0.45s ease, filter 0.25s ease;
 }
 
 .btn-primary:hover {
-  background: #059669;
+  background-position: 100% 50%;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 65, 108, 0.5);
+  filter: brightness(1.05);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(180, 18, 27, 0.4);
+  filter: brightness(0.95);
 }
 
 .btn-secondary {
   width: 100%;
-  background: #e7e9ec;
-  border-color: #adb1b8 #a2a6ac #8d9096;
+  background: linear-gradient(135deg, #ffffff 0%, #fff0f1 100%);
+  border-color: #B4121B;
   border-style: solid;
   border-width: 1px;
-  border-radius: 3px;
-  color: #111;
+  border-radius: 8px;
+  color: #7f0d13;
   cursor: pointer;
   display: inline-block;
   padding: 0;
@@ -133,11 +204,19 @@ body {
   text-decoration: none;
   font-size: 13px;
   line-height: 29px; /* roughly matches padding to center text vertically */
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset;
+  box-shadow: 0 2px 8px rgba(180, 18, 27, 0.15);
+  transition: transform 0.18s ease, box-shadow 0.25s ease, background 0.3s ease;
 }
 
 .btn-secondary:hover {
-  background: #dfe3e8;
+  background: linear-gradient(135deg, #fff0f1 0%, #ffd9dc 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(180, 18, 27, 0.25);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(180, 18, 27, 0.2);
 }
 
 .text-center {
@@ -155,12 +234,12 @@ body {
 }
 
 .auth-terms a {
-  color: #0066c0;
+  color: #B4121B;
   text-decoration: none;
 }
 
 .auth-terms a:hover {
-  color: #c45500;
+  color: #000000;
   text-decoration: underline;
 }
 
@@ -201,13 +280,15 @@ body {
   cursor: pointer;
   font-weight: 500;
   font-size: 14px;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s, transform 0.18s ease, box-shadow 0.25s ease;
   min-height: 40px;
   box-sizing: border-box;
 }
 
 .btn-social:hover {
   background-color: #f7f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
 }
 
 .social-icon {
@@ -218,8 +299,20 @@ body {
   object-fit: contain;
 }
 
+.google-emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f6d6d8;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .btn-social.google {
-  color: #3c4043;
+  color: #000000;
 }
 
 .btn-social.amazon {
@@ -249,15 +342,54 @@ body {
 }
 
 .footer-links a {
-  color: #0066c0;
+  color: #B4121B;
   text-decoration: none;
 }
 
 .footer-links a:hover {
+  color: #000000;
   text-decoration: underline;
 }
 
 .footer-copyright {
   color: #555;
   margin: 0;
+}
+
+/* Staggered fade-in for the form fields on the standalone auth pages. Scoped to
+   .auth-container so it doesn't replay oddly inside the intro modals. */
+.auth-container > .auth-card .input-group {
+  animation: auth-field-in 0.45s ease backwards;
+}
+.auth-container > .auth-card .input-group:nth-child(1) { animation-delay: 0.10s; }
+.auth-container > .auth-card .input-group:nth-child(2) { animation-delay: 0.18s; }
+.auth-container > .auth-card .input-group:nth-child(3) { animation-delay: 0.26s; }
+.auth-container > .auth-card .input-group:nth-child(4) { animation-delay: 0.34s; }
+
+@keyframes auth-field-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .auth-container > .auth-card,
+  .auth-container > .auth-card .input-group,
+  .btn-primary,
+  .btn-secondary,
+  .btn-social {
+    animation: none;
+    transition: none;
+  }
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .btn-social:hover {
+    transform: none;
+  }
 }

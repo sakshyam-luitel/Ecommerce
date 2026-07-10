@@ -29,8 +29,10 @@ const products = await getProducts();
 console.log(products);
 
 let productsHTML = "";
-products.forEach((product) => {
-  productsHTML += `<div class="product-container">
+products.forEach((product, index) => {
+  // Cap the index so cards far down the grid don't wait too long to appear.
+  const staggerIndex = Math.min(index, 15);
+  productsHTML += `<div class="product-container" style="--i: ${staggerIndex}">
           <div class="product-image-container">
             <img class="product-image"
               src="/static/${product.image}">

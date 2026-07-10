@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.conf import settings
 from .models import Products,Cart
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -25,6 +26,10 @@ def products(request):
     # context = {'products' : products}
     return render(request , 'amazon.html')
 
+
+def intro(request):
+    return render(request, 'intro.html', {'google_client_id': settings.GOOGLE_CLIENT_ID})
+
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def checkout(request):
@@ -38,7 +43,7 @@ def orders(request):
 
 
 def login(request):
-    return render(request , "login.html")
+    return render(request , "login.html", {'google_client_id': settings.GOOGLE_CLIENT_ID})
 
 def register(request):
     return render(request , "register.html")

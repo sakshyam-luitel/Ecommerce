@@ -1,0 +1,425 @@
+body {
+  font-family: Roboto, Arial, sans-serif;
+  background: #f4f4f4;
+  color: #000000;
+  margin: 0;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.intro-page {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Vibrant, low-opacity radial glows behind the hero. Sits under .intro-main
+   (z-index: 1) and the header (z-index: 1200); ignores pointer events. */
+.intro-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(42vw 42vw at 82% 18%, rgba(255, 65, 108, 0.22), transparent 60%),
+    radial-gradient(38vw 38vw at 12% 78%, rgba(180, 18, 27, 0.18), transparent 62%);
+  animation: intro-glow-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes intro-glow-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(0, -18px, 0) scale(1.06); }
+}
+
+.intro-header {
+  position: sticky;
+  top: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 30px;
+  background: linear-gradient(120deg, #000000 0%, #1a0305 35%, #4a0810 65%, #7f0d13 100%);
+  background-size: 220% 220%;
+  animation: intro-header-shift 14s ease infinite;
+  border-bottom: 2px solid #B4121B;
+  box-shadow: 0 2px 18px rgba(180, 18, 27, 0.45);
+}
+
+@keyframes intro-header-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.intro-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+}
+
+.intro-brand-mark {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ff416c 0%, #B4121B 60%, #7f0d13 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(255, 65, 108, 0.45);
+}
+
+.intro-brand-text {
+  font-size: 18px;
+}
+
+.intro-nav-actions {
+}
+
+.intro-sign-in-button,
+.intro-primary-button,
+.intro-secondary-button {
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.25s ease,
+    background-position 0.45s ease, background 0.3s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.intro-sign-in-button,
+.intro-primary-button {
+  background: linear-gradient(135deg, #ff416c 0%, #B4121B 55%, #7f0d13 100%);
+  background-size: 180% 180%;
+  background-position: 0% 50%;
+  color: #ffffff;
+  border: 1px solid #7f0d13;
+  padding: 12px 18px;
+  box-shadow: 0 4px 12px rgba(180, 18, 27, 0.35);
+}
+
+.intro-sign-in-button:hover,
+.intro-primary-button:hover {
+  background-position: 100% 50%;
+  border-color: #5e0a0f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 65, 108, 0.5);
+}
+
+.intro-sign-in-button:active,
+.intro-primary-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(180, 18, 27, 0.4);
+}
+
+.intro-secondary-button {
+  background: linear-gradient(135deg, #ffffff 0%, #fff0f1 100%);
+  color: #7f0d13;
+  border: 1px solid #B4121B;
+  padding: 12px 18px;
+  box-shadow: 0 2px 8px rgba(180, 18, 27, 0.15);
+}
+
+.intro-secondary-button:hover {
+  background: linear-gradient(135deg, #fff0f1 0%, #ffd9dc 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(180, 18, 27, 0.25);
+}
+
+.intro-secondary-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(180, 18, 27, 0.2);
+}
+
+.intro-main {
+  position: relative;
+  z-index: 1;
+  padding: 48px 30px 72px;
+}
+
+.intro-hero {
+  max-width: 1180px;
+  margin: 0 auto;
+  min-height: calc(100vh - 160px);
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.intro-copy h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  line-height: 1;
+  max-width: 12ch;
+  background: linear-gradient(135deg, #1a1a1a 0%, #1a1a1a 50%, #B4121B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #1a1a1a; /* fallback if background-clip unsupported */
+}
+
+/* Staggered entrance for the hero copy and side panel. backwards fill keeps
+   each element hidden until its delayed turn. */
+.intro-eyebrow { animation: intro-rise 0.6s ease backwards; animation-delay: 0.05s; }
+.intro-copy h1 { animation: intro-rise 0.6s ease backwards; animation-delay: 0.15s; }
+.intro-description { animation: intro-rise 0.6s ease backwards; animation-delay: 0.25s; }
+.intro-actions { animation: intro-rise 0.6s ease backwards; animation-delay: 0.35s; }
+.intro-note { animation: intro-rise 0.6s ease backwards; animation-delay: 0.45s; }
+.intro-panel { animation: intro-panel-in 0.7s ease backwards; animation-delay: 0.3s; }
+
+@keyframes intro-rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes intro-panel-in {
+  from { opacity: 0; transform: translateX(28px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.intro-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 14px;
+  color: #B4121B;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.intro-description {
+  max-width: 640px;
+  font-size: 17px;
+  line-height: 1.7;
+  color: #222222;
+  margin-bottom: 28px;
+}
+
+.intro-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.intro-note {
+  margin-top: 28px;
+  max-width: 560px;
+  padding-top: 18px;
+  border-top: 1px solid #d6d6d6;
+}
+
+.intro-note-label {
+  display: block;
+  margin-bottom: 8px;
+  color: #000000;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.intro-note p {
+  margin: 0;
+  color: #444444;
+  line-height: 1.6;
+}
+
+.intro-panel-card {
+  position: relative;
+  border: 1px solid rgba(180, 18, 27, 0.28);
+  border-radius: 16px;
+  padding: 28px;
+  background: linear-gradient(160deg, #ffffff 0%, #fff6f7 100%);
+  box-shadow: 0 12px 30px rgba(180, 18, 27, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.intro-panel-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(180, 18, 27, 0.2);
+  border-color: #B4121B;
+}
+
+.intro-panel-label {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: #B4121B;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.intro-panel-card h2 {
+  margin: 0 0 18px;
+  font-size: 26px;
+  line-height: 1.15;
+}
+
+.intro-feature-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.intro-feature-list li {
+  position: relative;
+  padding-left: 22px;
+  color: #333333;
+}
+
+.intro-feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #B4121B;
+  box-shadow: 0 0 0 4px rgba(180, 18, 27, 0.22);
+}
+
+.intro-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 24px;
+}
+
+.intro-modal-overlay.is-open {
+  display: flex;
+}
+
+/* Entrance animations replay each time .is-open is added (intro.js toggles it). */
+.intro-modal-overlay.is-open .intro-modal-backdrop {
+  animation: intro-backdrop-in 0.3s ease backwards;
+}
+
+.intro-modal-overlay.is-open .intro-modal-shell {
+  animation: intro-modal-in 0.35s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+}
+
+@keyframes intro-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes intro-modal-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.intro-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+}
+
+.intro-modal-shell {
+  position: relative;
+  z-index: 1;
+  width: min(460px, 100%);
+}
+
+.intro-modal-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: #B4121B;
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1;
+  z-index: 2;
+}
+
+.intro-login-card {
+  width: 100%;
+  border: 1.5px solid #B4121B;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 900px) {
+  .intro-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .intro-header,
+  .intro-main {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .intro-copy h1 {
+    font-size: clamp(2.3rem, 13vw, 3.6rem);
+  }
+
+  .intro-description {
+    font-size: 16px;
+  }
+
+  .intro-actions {
+    flex-direction: column;
+  }
+
+  .intro-sign-in-button,
+  .intro-primary-button,
+  .intro-secondary-button {
+    width: 100%;
+    text-align: center;
+  }
+
+  .intro-modal-close {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .intro-header,
+  .intro-page::before,
+  .intro-eyebrow,
+  .intro-copy h1,
+  .intro-description,
+  .intro-actions,
+  .intro-note,
+  .intro-panel,
+  .intro-modal-overlay.is-open .intro-modal-backdrop,
+  .intro-modal-overlay.is-open .intro-modal-shell {
+    animation: none;
+  }
+  .intro-sign-in-button,
+  .intro-primary-button,
+  .intro-secondary-button,
+  .intro-panel-card {
+    transition: none;
+  }
+  .intro-sign-in-button:hover,
+  .intro-primary-button:hover,
+  .intro-secondary-button:hover,
+  .intro-panel-card:hover {
+    transform: none;
+  }
+}

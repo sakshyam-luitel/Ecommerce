@@ -36,6 +36,7 @@ def cart(request):
             return Response(serializer.data , status = status.HTTP_201_CREATED)
         return Response(serializer.errors , status = status.HTTP_400_BAD_REQUEST)
     elif request.method == "GET":
+        cart = Cart.objects.filter(user_id = request.user)
         serializer = CartSerializer(cart , many = True)
         return Response(serializer.data , status = status.HTTP_200_OK)
     elif request.method == 'DELETE':
@@ -107,6 +108,17 @@ def order_items(request):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+
+from django.conf import settings
+from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+from allauth.socialaccount.providers.oauth2.client import OAuth2Client
+from dj_rest_auth.registration.views import SocialLoginView
+
+class GoogleLogin(SocialLoginView):
+    adapter_class = GoogleOAuth2Adapter
+    callback_url = settings.GOOGLE_CALLBACK_URL
+    client_class = OAuth2Client
 
 
 

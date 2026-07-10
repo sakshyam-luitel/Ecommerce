@@ -1,4 +1,9 @@
 .main {
+  background: transparent;
+  padding-bottom: 20px;
+}
+
+.main {
   margin-top: 60px;
 }
 
@@ -66,17 +71,43 @@
 }
 
 .product-container {
+  background: #ffffff;
   padding-top: 40px;
   padding-bottom: 25px;
   padding-left: 25px;
   padding-right: 25px;
 
-  border: 1.5px solid #bbb;
+  border: 1px solid #e3e3e3;
   border-radius: 12px;
   margin: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
 
   display: flex;
   flex-direction: column;
+
+  /* Staggered entrance as the grid renders. `backwards` fill keeps each card
+     hidden until its delayed turn, then hands transform back so the hover-lift
+     below works. --i is set per card in amazon.js. */
+  animation: product-fade-in-up 0.5s ease backwards;
+  animation-delay: calc(var(--i, 0) * 0.04s);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.product-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 34px rgba(180, 18, 27, 0.18);
+  border-color: #B4121B;
+}
+
+@keyframes product-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .product-image-container {
@@ -86,6 +117,7 @@
 
   height: 180px;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 
 .product-image {
@@ -94,6 +126,23 @@
     so they stay inside their container. */
   max-width: 100%;
   max-height: 100%;
+  transition: transform 0.35s ease;
+}
+
+.product-container:hover .product-image {
+  transform: scale(1.08);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-container {
+    animation: none;
+  }
+  .product-container:hover {
+    transform: none;
+  }
+  .product-container:hover .product-image {
+    transform: none;
+  }
 }
 
 .product-name {
@@ -113,7 +162,7 @@
 }
 
 .product-rating-count {
-  color: rgb(1, 124, 182);
+  color: #B4121B;
   cursor: pointer;
   margin-top: 3px;
 }
@@ -132,7 +181,7 @@
 }
 
 .added-to-cart {
-  color: rgb(6, 125, 98);
+  color: #B4121B;
   font-size: 16px;
 
   display: flex;

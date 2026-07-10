@@ -2,7 +2,9 @@
   height: 60px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: #0c4a6e;
+  background: linear-gradient(120deg, #000000 0%, #1a0305 35%, #4a0810 65%, #7f0d13 100%);
+  background-size: 220% 220%;
+  animation: checkout-header-shift 14s ease infinite;
 
   display: flex;
   justify-content: center;
@@ -12,7 +14,14 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  border-bottom: 2px solid #08334f;
+  border-bottom: 2px solid #B4121B;
+  box-shadow: 0 2px 18px rgba(180, 18, 27, 0.45);
+}
+
+@keyframes checkout-header-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .header-content {
@@ -69,7 +78,7 @@
 }
 
 .return-to-home-link {
-  color: rgb(0, 113, 133);
+  color: #B4121B;
   font-size: 23px;
   text-decoration: none;
   cursor: pointer;
@@ -98,26 +107,40 @@
 }
 
 .user-container {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
 .logout-button {
-  display: flex; 
-  align-items: center; 
-  gap: 6px; 
-  background: white; 
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  font-family: Roboto; 
-  font-weight: 700; 
-  font-size: 13px; 
-  color: #333; 
-  cursor: pointer; 
-  padding: 6px 12px; 
-  box-shadow: 0 2px 5px rgba(213,217,217,0.5); 
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #ffffff 0%, #ffe9eb 100%);
+  border: 1px solid #B4121B;
+  border-radius: 6px;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 13px;
+  color: #7f0d13;
+  cursor: pointer;
+  padding: 6px 12px;
+  box-shadow: 0 2px 8px rgba(180, 18, 27, 0.25);
   white-space: nowrap;
+  transition: transform 0.18s ease, box-shadow 0.25s ease,
+    background 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+  background: linear-gradient(135deg, #B4121B 0%, #ff416c 100%);
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(180, 18, 27, 0.5);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(180, 18, 27, 0.4);
 }
 
 @media (max-width: 1000px) {
@@ -143,12 +166,25 @@
   .logout-button {
     padding: 6px;
   }
-  
+
   .user-container {
     gap: 5px;
   }
-  
+
   .checkout-header-right-section {
     gap: 5px !important;
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .checkout-header {
+    animation: none;
+  }
+  .logout-button {
+    transition: none;
+  }
+  .logout-button:hover {
+    transform: none;
   }
 }

@@ -1,9 +1,37 @@
 body {
   font-family: Roboto, Arial;
-  color: rgb(33, 33, 33);
+  color: #000000;
   /* The <body> element has a default margin of 8px
      on all sides. This removes the default margins. */
   margin: 0;
+}
+
+/* Site-wide vibrant radial-glow backdrop (matches the intro page). Fixed, sits
+   behind all content (z-index: -1) and supplies the base #f4f4f4 tone itself, so
+   pages only need a transparent .main to reveal it. Pages that set their own
+   opaque body background (login/register/intro) naturally cover this. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #f4f4f4;
+  background-image:
+    radial-gradient(42vw 42vw at 82% 18%, rgba(255, 65, 108, 0.22), transparent 60%),
+    radial-gradient(38vw 38vw at 12% 78%, rgba(180, 18, 27, 0.18), transparent 62%);
+  animation: page-glow-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes page-glow-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(0, -18px, 0) scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
 }
 
 /* <p> elements have a default margin on the top
@@ -26,40 +54,63 @@ input, select, button {
 
 .button-primary {
   color: white;
-  background-color: #10b981;
-  border: 1px solid #059669;
+  background: linear-gradient(135deg, #ff416c 0%, #B4121B 55%, #7f0d13 100%);
+  background-size: 180% 180%;
+  background-position: 0% 50%;
+  border: 1px solid #7f0d13;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+  box-shadow: 0 4px 12px rgba(180, 18, 27, 0.35);
+  transition: transform 0.18s ease, box-shadow 0.25s ease,
+    background-position 0.45s ease, filter 0.25s ease;
 }
 
 .button-primary:hover {
-  background-color: #059669;
-  border: 1px solid #047857;
+  background-position: 100% 50%;
+  border-color: #5e0a0f;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 65, 108, 0.5);
+  filter: brightness(1.05);
 }
 
 .button-primary:active {
-  background: #047857;
-  border-color: #065f46;
-  box-shadow: none;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(180, 18, 27, 0.4);
+  filter: brightness(0.95);
 }
 
 .button-secondary {
-  color: rgb(33, 33, 33);
-  background: white;
-  border: 1px solid rgb(213, 217, 217);
+  color: #7f0d13;
+  background: linear-gradient(135deg, #ffffff 0%, #fff0f1 100%);
+  border: 1px solid #B4121B;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+  box-shadow: 0 2px 8px rgba(180, 18, 27, 0.15);
+  transition: transform 0.18s ease, box-shadow 0.25s ease, background 0.3s ease;
 }
 
 .button-secondary:hover {
-  background-color: rgb(247, 250, 250);
+  background: linear-gradient(135deg, #fff0f1 0%, #ffd9dc 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(180, 18, 27, 0.25);
 }
 
 .button-secondary:active {
-  background-color: rgb(237, 253, 255);
-  box-shadow: none;
+  transform: translateY(0);
+  background: #f1d6d8;
+  box-shadow: 0 2px 6px rgba(180, 18, 27, 0.2);
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .button-primary,
+  .button-secondary {
+    transition: none;
+  }
+  .button-primary:hover,
+  .button-secondary:hover {
+    transform: none;
+  }
 }
 
 /* These styles will limit text to 2 lines. Anything
@@ -75,19 +126,19 @@ input, select, button {
 }
 
 .link-primary {
-  color: rgb(1, 124, 182);
+  color: #B4121B;
   cursor: pointer;
 }
 
 .link-primary:hover {
-  color: rgb(196, 80, 0);
+  color: #000000;
 }
 
 /* Styles for dropdown selectors. */
 select {
-  color: rgb(33, 33, 33);
+  color: #000000;
   background-color: rgb(240, 240, 240);
-  border: 1px solid rgb(213, 217, 217);
+  border: 1px solid #000000;
   border-radius: 8px;
   padding: 3px 5px;
   font-size: 15px;
@@ -97,5 +148,5 @@ select {
 
 select:focus,
 input:focus {
-  outline: 2px solid rgb(255, 153, 0);
+  outline: 2px solid #B4121B;
 }

@@ -1,6 +1,13 @@
 import { getCookie } from "../data/cart.js";
+import {
+  formatAuthError,
+  showFormError,
+  clearFormError,
+} from "./utils/formError.js";
 
 const csrftoken = getCookie('csrftoken')
+
+const registerForm = document.querySelector('.js-register-form') || document.querySelector('.auth-form');
 
 async function registerUser(){
     const username = document.getElementById('username').value
@@ -8,6 +15,12 @@ async function registerUser(){
     const password = document.getElementById('password').value
     const passwordConfirm= document.getElementById('password-confirm').value
 
+    clearFormError(registerForm)
+
+    if (password !== passwordConfirm) {
+        showFormError(registerForm, "Passwords do not match.")
+        return false
+    }
 
     try{
         const response = await fetch('/api/auth/registration/',{
@@ -17,7 +30,7 @@ async function registerUser(){
             "X-CSRFToken":csrftoken
            },
            body: JSON.stringify({
-            username: username, 
+            username: username,
             email: email,
             password1: password,
             password2: passwordConfirm
@@ -26,19 +39,25 @@ async function registerUser(){
         if(!response.ok){
             const data = await response.json();
             console.log('Failed to add userdata:', data)
-            alert('Registration Failed: ' + JSON.stringify(data));
-        } else {
-            console.log('Registration successful')
-            window.location.href = '/' // or wherever you intend to redirect
+            showFormError(registerForm, formatAuthError(data))
+            return false
         }
+        console.log('Registration successful')
+        return true
     }
     catch(error){
         console.log("Error:", error)
+        showFormError(registerForm, "Unable to reach the server. Please try again.")
+        return false
     }
 }
 
-document.querySelector('.auth-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    await registerUser();
-    window.location.href = '/'
-});
+if (registerForm) {
+    registerForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const success = await registerUser();
+        if (success) {
+            window.location.href = '/'
+        }
+    });
+}

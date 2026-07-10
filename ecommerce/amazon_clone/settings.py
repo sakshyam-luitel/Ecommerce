@@ -10,9 +10,9 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
-import dj_database_url
 from pathlib import Path
 from datetime import timedelta
+import dj_database_url
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -58,7 +58,8 @@ INSTALLED_APPS = [
 
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',    
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',    
 
     'dj_rest_auth',
     'dj_rest_auth.registration',
@@ -107,18 +108,17 @@ WSGI_APPLICATION = 'amazon_clone.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# Build the DATABASES config from a single DATABASE_URL so the same code works
+# in both environments: locally DATABASE_URL points at MySQL (mysqlclient), and
+# in production the host (e.g. Render) sets DATABASE_URL to its Postgres instance
+# (psycopg2). dj-database-url picks the engine from the URL scheme. If no
+# DATABASE_URL is set, fall back to a local sqlite file.
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': os.environ.get('DB_NAME'),
-    #     'PASSWORD' : os.environ.get('DB_PASSWORD'),
-    #     'USER' : os.environ.get('DB_USER'),
-    #     'HOST' : os.environ.get('DB_HOST'),
-    #     'PORT' : os.environ.get('DB_PORT'),
-    # }
-
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL')
+        env='DATABASE_URL',
+        default=f'sqlite:///{BASE_DIR / "db.sqlite3"}',
+        conn_max_age=600,
+        ssl_require=not DEBUG,
     )
 }
 
@@ -182,7 +182,7 @@ REST_AUTH = {
     'JWT_AUTH_COOKIE':'access-token',
     'JWT_AUTH_REFRESH_COOKIE': 'refresh-token',
     'JWT_AUTH_HTTPONLY': True,
-    'JWT_AUTH_SECURE': True,  # Set to True in production (HTTPS)
+    'JWT_AUTH_SECURE': not DEBUG,  # Secure cookies over HTTPS in production; off in local http dev so the cookie is sent
     'JWT_AUTH_SAMESITE': 'Lax',
 }
 
@@ -192,6 +192,14 @@ SIMPLE_JWT = {
     'ROTATE_REFRESH_TOKEN':True,
     'BLACKLIST_AFTER_ROTATION':True,
 }
+
+# Google OAuth. GOOGLE_CLIENT_ID is surfaced to the login/intro templates so the
+# "Continue with Google" button can build the consent URL. GOOGLE_CALLBACK_URL is
+# the redirect_uri the frontend sends to Google AND the callback_url the backend
+# (GoogleLogin) uses to exchange the code — the two must match exactly, and the
+# value must be registered in the Google Cloud Console.
+GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
+GOOGLE_CALLBACK_URL = os.environ.get('GOOGLE_CALLBACK_URL', 'http://localhost:8000/login/')
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

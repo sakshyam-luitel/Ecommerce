@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import GoogleLogin
 
 urlpatterns = [
     path('products/' , views.products , name = 'products'),
@@ -8,4 +9,5 @@ urlpatterns = [
     path('order/', views.order , name = 'order'),
     path('order/<str:pk>/', views.order_details, name='order_details'),
     path('order_items/',views.order_items , name = "order_item"),
+    path('auth/google/', GoogleLogin.as_view(), name='google_login'),
 ]

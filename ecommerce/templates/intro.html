@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ecommerce | Welcome</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'styles/shared/general.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/pages/login.css' %}">
+  <link rel="stylesheet" href="{% static 'styles/pages/intro.css' %}">
+</head>
+<body>
+  <div class="intro-page">
+    <header class="intro-header">
+      <a href="{% url 'intro' %}" class="intro-brand" aria-label="Ecommerce home">
+        <span class="intro-brand-mark">E</span>
+        <span class="intro-brand-text">Ecommerce</span>
+      </a>
+
+      <nav class="intro-nav-actions" aria-label="Primary">
+        <button type="button" class="intro-sign-in-button js-open-login-modal">Sign in</button>
+      </nav>
+    </header>
+
+    <main class="intro-main">
+      <section class="intro-hero">
+        <div class="intro-copy">
+          <p class="intro-eyebrow">Storefront entry</p>
+          <h1>Your one-stop shop for everything you need.</h1>
+          <p class="intro-description">
+            Browse products across categories like electronics, fashion, home essentials,
+            beauty, groceries, books, and more. Search, compare, add to cart, and shop
+            with a smooth checkout experience.
+          </p>
+
+          <div class="intro-actions">
+            <button type="button" class="intro-primary-button js-open-login-modal">Sign in</button>
+            <button type="button" class="intro-secondary-button js-open-register-modal">Create account</button>
+          </div>
+
+          <div class="intro-note">
+            <span class="intro-note-label">What you can do here</span>
+            <p>Sign in from the navigation bar, create a new account, or start browsing right away.</p>
+          </div>
+        </div>
+
+        <aside class="intro-panel">
+          <div class="intro-panel-card">
+            <span class="intro-panel-label">Quick access</span>
+            <h2>Everything is organized for easy shopping.</h2>
+            <ul class="intro-feature-list">
+              <li>Wide range of product categories</li>
+              <li>Simple search and cart flow</li>
+              <li>Fast access to checkout and orders</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <div class="intro-modal-overlay js-login-modal" aria-hidden="true">
+    <div class="intro-modal-backdrop js-close-login-modal" aria-hidden="true"></div>
+    <div class="intro-modal-shell" role="dialog" aria-modal="true" aria-labelledby="intro-login-title">
+      <button type="button" class="intro-modal-close js-close-login-modal" aria-label="Close sign in dialog">&times;</button>
+
+      <div class="auth-card intro-login-card">
+        <h1 class="auth-title" id="intro-login-title">Sign in</h1>
+
+        <form method="post" class="auth-form">
+          {% csrf_token %}
+          <div class="input-group">
+            <label for="email">Email or mobile phone number</label>
+            <input type="text" id="email" name="email" required>
+          </div>
+
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+
+          <button type="submit" class="btn-primary js-login-button" style="margin-bottom: 12px;">Continue</button>
+        </form>
+
+        <div class="social-login-group">
+          <button type="button" class="btn-social google js-google-login-button" data-google-client-id="{{ google_client_id }}">
+            <span class="social-icon google-emoji" aria-hidden="true">G</span>
+            Continue with Google
+          </button>
+        </div>
+
+        <div class="auth-divider">
+          <span>New to Ecommerce?</span>
+        </div>
+
+        <button type="button" class="btn-secondary text-center block js-open-register-modal" style="margin-bottom: 25px;">Create your account</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-modal-overlay intro-register-overlay js-register-modal" aria-hidden="true">
+    <div class="intro-modal-backdrop js-close-register-modal" aria-hidden="true"></div>
+    <div class="intro-modal-shell" role="dialog" aria-modal="true" aria-labelledby="intro-register-title">
+      <button type="button" class="intro-modal-close js-close-register-modal" aria-label="Close register dialog">&times;</button>
+
+      <div class="auth-card intro-login-card intro-register-card">
+        <h1 class="auth-title" id="intro-register-title">Create account</h1>
+
+        <form class="auth-form js-register-form" method="post">
+          {% csrf_token %}
+          <div class="input-group">
+            <label for="register-username">Your name</label>
+            <input type="text" id="register-username" name="username" required placeholder="First and last name">
+          </div>
+
+          <div class="input-group">
+            <label for="register-email">Mobile number or email</label>
+            <input type="text" id="register-email" name="email" required>
+          </div>
+
+          <div class="input-group">
+            <label for="register-password">Password</label>
+            <input type="password" id="register-password" name="password" required placeholder="At least 6 characters">
+            <div class="password-hint">Passwords must be at least 6 characters.</div>
+          </div>
+
+          <div class="input-group">
+            <label for="register-password-confirm">Re-enter password</label>
+            <input type="password" id="register-password-confirm" name="passwordconfirm" required>
+          </div>
+
+          <button type="submit" class="btn-primary js-register-button">Continue</button>
+        </form>
+
+        <div class="auth-divider">
+          <span>Already have an account?</span>
+        </div>
+
+        <button type="button" class="btn-secondary text-center block js-open-login-modal" style="margin-bottom: 25px;">Sign in</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="{% static 'scripts/login.js' %}" type="module"></script>
+  <script src="{% static 'scripts/register.js' %}" type="module"></script>
+  <script src="{% static 'scripts/intro.js' %}" type="module"></script>
+</body>
+</html>

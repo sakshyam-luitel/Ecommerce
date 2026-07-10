@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login | Ecommerce</title>
-  
+
   <!-- Reuse existing general & login css -->
   <link rel="stylesheet" href="../static/styles/shared/general.css">
   <link rel="stylesheet" href="../static/styles/pages/login.css">
@@ -18,7 +18,7 @@
 
     <div class="auth-card">
       <h1 class="auth-title">Sign in</h1>
-      
+
       <form method = "post" class="auth-form">
           {% csrf_token %}
         <div class="input-group">
@@ -33,6 +33,13 @@
 
         <button type="submit" class="btn-primary js-login-button" style="margin-bottom: 12px;">Continue</button>
       </form>
+
+      <div class="social-login-group">
+        <button type="button" class="btn-social google js-google-login-button" data-google-client-id="{{ google_client_id }}">
+          <span class="social-icon google-emoji" aria-hidden="true">G</span>
+          Continue with Google
+        </button>
+      </div>
 
       <div class="auth-divider">
         <span>New to Ecommerce?</span>
