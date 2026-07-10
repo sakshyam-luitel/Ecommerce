@@ -26,7 +26,7 @@ def products(request):
     
 
 @api_view(['POST','GET','DELETE'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def cart(request):
     
     if request.method == "POST":
@@ -66,7 +66,7 @@ def cart_details(request, pk):
         return Response(serializer.data , status = status.HTTP_200_OK)
     
 @api_view(['GET','POST'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def order(request):
     if request.method == "GET":
         order = Order.objects.filter(user_id = request.user)
@@ -80,7 +80,7 @@ def order(request):
         return Response(serializer.errors , status = status.HTTP_400_BAD_REQUEST)
 
 @api_view(["GET", "DELETE"])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def order_details(request, pk):
     try:
         order_data = Order.objects.get(pk=pk, user_id=request.user)
@@ -95,7 +95,7 @@ def order_details(request, pk):
         return Response(serializer.data, status=status.HTTP_200_OK)
     
 @api_view(['GET','POST'])
-# @permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated])
 def order_items(request):
     if request.method == 'GET':
         order_data = OrderItem.objects.filter(order__user_id=request.user)
