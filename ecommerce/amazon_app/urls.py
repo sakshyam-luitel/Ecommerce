@@ -9,4 +9,5 @@ urlpatterns = [
     path('checkout/', views.checkout, name = 'checkout'),
     path('orders/' , views.orders , name = 'orders'),
     path('tracking/', views.tracking , name = 'tracking'),
+    path('auth/google/callback',views.callback , name = 'callback')
 ]

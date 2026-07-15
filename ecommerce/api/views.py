@@ -110,15 +110,41 @@ def order_items(request):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
 
+import logging
+
 from django.conf import settings
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
-from allauth.socialaccount.providers.oauth2.client import OAuth2Client
+from allauth.socialaccount.providers.oauth2.client import OAuth2Client, OAuth2Error
 from dj_rest_auth.registration.views import SocialLoginView
+
+logger = logging.getLogger(__name__)
+
+
+class LoggingOAuth2Client(OAuth2Client):
+    """OAuth2 client that logs Google's real token-exchange error.
+
+    dj-rest-auth catches the OAuth2Error raised here and collapses it into a
+    generic "Failed to exchange code for access token" (with no error chain, so
+    the true reason is otherwise invisible). Logging it here surfaces Google's
+    actual response — e.g. invalid_grant (code reused/expired),
+    redirect_uri_mismatch, or invalid_client (bad credentials).
+    """
+
+    def get_access_token(self, code, *args, **kwargs):
+        try:
+            return super().get_access_token(code, *args, **kwargs)
+        except OAuth2Error as exc:
+            logger.error('Google token exchange failed: %s', exc)
+            raise
+
 
 class GoogleLogin(SocialLoginView):
     adapter_class = GoogleOAuth2Adapter
+    # Must byte-match the redirect_uri the frontend sends to Google at authorize
+    # time (login.js) AND be registered in the Google Cloud Console. Driven from
+    # settings so it can be overridden per environment via GOOGLE_CALLBACK_URL.
     callback_url = settings.GOOGLE_CALLBACK_URL
-    client_class = OAuth2Client
+    client_class = LoggingOAuth2Client
 
 
 

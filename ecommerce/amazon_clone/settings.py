@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     # 'corsheaders',
     'amazon_app',
     'api',
@@ -199,7 +200,7 @@ SIMPLE_JWT = {
 # (GoogleLogin) uses to exchange the code — the two must match exactly, and the
 # value must be registered in the Google Cloud Console.
 GOOGLE_CLIENT_ID = os.environ.get('GOOGLE_CLIENT_ID')
-GOOGLE_CALLBACK_URL = os.environ.get('GOOGLE_CALLBACK_URL', 'http://localhost:8000/login/')
+GOOGLE_CALLBACK_URL = os.environ.get('GOOGLE_CALLBACK_URL', 'http://localhost:8000/auth/google/callback')
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

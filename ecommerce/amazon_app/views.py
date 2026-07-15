@@ -52,4 +52,7 @@ def register(request):
 @permission_classes([IsAuthenticated])
 def tracking(request):
     return render(request , "tracking.html")
+
+def callback(request):
+    return render(request , "callback.html")
     
