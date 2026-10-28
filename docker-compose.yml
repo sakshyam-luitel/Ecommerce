@@ -1,0 +1,41 @@
+services:
+  backend:
+    build:
+      context: ./ecommerce
+      dockerfile: Dockerfile
+    environment:
+      DEBUG: "True"
+      SECRET_KEY: docker-development-secret-key
+      DATABASE_URL: sqlite:////app/db.sqlite3
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOOGLE_CALLBACK_URL: ${GOOGLE_CALLBACK_URL:-http://localhost:8080/auth/google/callback}
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./ecommerce:/app
+      - backend-python-cache:/root/.cache
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/admin/login/', timeout=2)"
+      interval: 5s
+      timeout: 3s
+      retries: 12
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    environment:
+      API_URL: ${API_URL:-}
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+
+volumes:
+  backend-python-cache:

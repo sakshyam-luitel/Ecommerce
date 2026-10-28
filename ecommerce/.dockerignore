@@ -1,0 +1,11 @@
+.env
+.venv
+__pycache__/
+*.py[cod]
+node_modules/
+static/
+staticfiles/
+.git/
+.gitignore
+package.json
+package-lock.json

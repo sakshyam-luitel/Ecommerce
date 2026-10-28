@@ -1,0 +1,181 @@
+.checkout-header {
+  height: 60px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background: #16324F;
+  display: flex;
+  justify-content: center;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #2B5D8F;
+  box-shadow: 0 2px 18px rgba(43, 93, 143, 0.45);
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1100px;
+
+  display: flex;
+  align-items: center;
+}
+
+.checkout-header-left-section {
+  width: 150px;
+}
+
+.amazon-logo {
+  width: 100px;
+  margin-top: 12px;
+}
+
+.amazon-mobile-logo {
+  display: none;
+}
+
+/* @media is used to create responsive design (making the
+   website look good on any screen size). This @media
+   means when the screen width is 575px or less, different
+   styles (inside the {...}) will be applied. */
+@media (max-width: 575px) {
+  .checkout-header-left-section {
+    width: auto;
+  }
+
+  .amazon-logo {
+    display: none;
+  }
+
+  .amazon-mobile-logo {
+    display: inline-block;
+    height: 35px;
+    margin-top: 5px;
+  }
+}
+
+.checkout-header-middle-section {
+  flex: 1;
+  flex-shrink: 0;
+  text-align: center;
+
+  font-size: 25px;
+  font-weight: 500;
+
+  display: flex;
+  justify-content: center;
+}
+
+.return-to-home-link {
+  color: #2B5D8F;
+  font-size: 23px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .checkout-header-middle-section {
+    font-size: 20px;
+    margin-right: 60px;
+  }
+
+  .return-to-home-link {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 575px) {
+  .checkout-header-middle-section {
+    margin-right: 5px;
+  }
+}
+
+.checkout-header-right-section {
+  text-align: right;
+  width: 150px;
+}
+
+.user-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #F7FBFF;
+  border: 1px solid #2B5D8F;
+  border-radius: 6px;
+  font-family: Roboto;
+  font-weight: 700;
+  font-size: 13px;
+  color: #16324F;
+  cursor: pointer;
+  padding: 6px 12px;
+  box-shadow: 0 2px 8px rgba(43, 93, 143, 0.25);
+  white-space: nowrap;
+  transition: transform 0.18s ease, box-shadow 0.25s ease,
+    background 0.3s ease, color 0.3s ease;
+}
+
+.logout-button:hover {
+  background: #16324F;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(43, 93, 143, 0.5);
+}
+
+.logout-button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(43, 93, 143, 0.4);
+}
+
+@media (max-width: 1000px) {
+  .checkout-header-right-section {
+    width: auto;
+  }
+}
+
+@media (max-width: 575px) {
+  .checkout-header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .username-greeting {
+    display: none;
+  }
+
+  .logout-text {
+    display: none;
+  }
+
+  .logout-button {
+    padding: 6px;
+  }
+
+  .user-container {
+    gap: 5px;
+  }
+
+  .checkout-header-right-section {
+    gap: 5px !important;
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .checkout-header {
+    animation: none;
+  }
+  .logout-button {
+    transition: none;
+  }
+  .logout-button:hover {
+    transform: none;
+  }
+}

@@ -105,15 +105,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'amazon_clone.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-# Build the DATABASES config from a single DATABASE_URL so the same code works
-# in both environments: locally DATABASE_URL points at MySQL (mysqlclient), and
-# in production the host (e.g. Render) sets DATABASE_URL to its Postgres instance
-# (psycopg2). dj-database-url picks the engine from the URL scheme. If no
-# DATABASE_URL is set, fall back to a local sqlite file.
 DATABASES = {
     'default': dj_database_url.config(
         env='DATABASE_URL',
@@ -160,7 +151,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR , 'static')]
+STATICFILES_DIRS = []
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # os.path.join(BASE_DIR , 'static/images')]
 

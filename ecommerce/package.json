@@ -1,8 +1,0 @@
-{
-  "dependencies": {
-    "@tailwindplus/elements": "^1.0.22"
-  },
-  "devDependencies": {
-    "tailwindcss": "^4.2.2"
-  }
-}

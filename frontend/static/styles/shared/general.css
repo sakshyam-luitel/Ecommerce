@@ -1,0 +1,152 @@
+body {
+  font-family: Roboto, Arial;
+  color: #000000;
+  /* The <body> element has a default margin of 8px
+     on all sides. This removes the default margins. */
+  margin: 0;
+  min-width: 320px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Site-wide vibrant radial-glow backdrop (matches the intro page). Fixed, sits
+   behind all content (z-index: -1) and supplies the base #f4f4f4 tone itself, so
+   pages only need a transparent .main to reveal it. Pages that set their own
+   opaque body background (login/register/intro) naturally cover this. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: #E8EEF5;
+  background-image: none;
+  }
+
+@keyframes page-glow-drift {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(0, -18px, 0) scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    animation: none;
+  }
+}
+
+/* <p> elements have a default margin on the top
+   and bottom. This removes the default margins. */
+p {
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+select {
+  cursor: pointer;
+}
+
+input, select, button {
+  font-family: Roboto, Arial;
+}
+
+.button-primary {
+  color: white;
+  background: #244B74;
+  border: 1px solid #16324F;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(43, 93, 143, 0.35);
+  transition: transform 0.18s ease, box-shadow 0.25s ease,
+    background-color 0.3s ease, filter 0.25s ease;
+}
+
+.button-primary:hover {
+  background: #16324F;
+  border-color: #10263D;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 120, 168, 0.5);
+  filter: brightness(1.05);
+}
+
+.button-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(43, 93, 143, 0.4);
+  filter: brightness(0.95);
+}
+
+.button-secondary {
+  color: #16324F;
+  background: #F8FBFF;
+  border: 1px solid #2B5D8F;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(43, 93, 143, 0.15);
+  transition: transform 0.18s ease, box-shadow 0.25s ease, background-color 0.3s ease;
+}
+
+.button-secondary:hover {
+  background: #E5EEF7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(43, 93, 143, 0.25);
+}
+
+.button-secondary:active {
+  transform: translateY(0);
+  background: #D5E3F0;
+  box-shadow: 0 2px 6px rgba(43, 93, 143, 0.2);
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .button-primary,
+  .button-secondary {
+    transition: none;
+  }
+  .button-primary:hover,
+  .button-secondary:hover {
+    transform: none;
+  }
+}
+
+/* These styles will limit text to 2 lines. Anything
+   beyond 2 lines will be replaced with "..."
+   You can find this code by using an A.I. tool or by
+   searching in Google.
+   https://css-tricks.com/almanac/properties/l/line-clamp/ */
+.limit-text-to-2-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.link-primary {
+  color: #2B5D8F;
+  cursor: pointer;
+}
+
+.link-primary:hover {
+  color: #000000;
+}
+
+/* Styles for dropdown selectors. */
+select {
+  color: #000000;
+  background-color: rgb(240, 240, 240);
+  border: 1px solid #000000;
+  border-radius: 8px;
+  padding: 3px 5px;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
+}
+
+select:focus,
+input:focus {
+  outline: 2px solid #2B5D8F;
+}
