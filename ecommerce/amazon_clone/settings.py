@@ -26,17 +26,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
+FRONTEND_URL = os.environ.get('FRONTEND_URL')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
-    'vercel.app',
-    "localhost",
-    "127.0.0.1",
-    'http://localhost:5173',
-    '*',
-    '.onrender.com'
+    FRONTEND_URL
 ]
 
 
@@ -82,9 +78,9 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware"
 ]
 
-# CORS_ALLOWED_ORIGIN = [
-#     'http://localhost:5173',
-# ]
+CORS_ALLOWED_ORIGIN = [
+    FRONTEND_URL
+]
 
 ROOT_URLCONF = 'amazon_clone.urls'
 

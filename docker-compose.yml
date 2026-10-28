@@ -30,7 +30,7 @@ services:
       dockerfile: Dockerfile
     environment:
       API_URL: ${API_URL:-}
-      BACKEND_URL: ${BACKEND_URL:-http://backend:8000}
+      BACKEND_URL: ${BACKEND_URL:-}
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
     depends_on:
       backend:
