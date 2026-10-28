@@ -4,7 +4,6 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY docker-entrypoint.d/40-frontend-env.sh /docker-entrypoint.d/40-frontend-env.sh
 
 COPY index.html /usr/share/nginx/html/index.html
-COPY env.js /usr/share/nginx/html/env.js
 COPY static /usr/share/nginx/html/static
 COPY templates /usr/share/nginx/html/templates
 
