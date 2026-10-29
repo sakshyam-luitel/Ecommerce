@@ -10,7 +10,7 @@ async function loadAndRenderOrders() {
   try {
     const csrftoken = getCookie("csrftoken");
     // Fetch orders
-    const ordersRes = await fetch("/api/v1/order/", 
+    const ordersRes = await fetch(window.apiUrl("/api/v1/order/"), 
       {
       headers: {
          "Content-Type": "application/json",
@@ -23,7 +23,7 @@ async function loadAndRenderOrders() {
     const orders = await ordersRes.json();
 
     // Fetch order items
-    const itemsRes = await fetch("/api/v1/order_items/",
+    const itemsRes = await fetch(window.apiUrl("/api/v1/order_items/"),
        {
         headers:
         { "Content-Type": "application/json",
@@ -129,7 +129,7 @@ async function loadAndRenderOrders() {
         if (!confirm("Are you sure you want to delete this order?")) return;
 
         try {
-          const deleteRes = await fetch(`/api/v1/order/${orderIdToDelete}/`, {
+          const deleteRes = await fetch(window.apiUrl(`/api/v1/order/${orderIdToDelete}/`), {
             method: "DELETE",
             headers: {
               "X-CSRFToken": csrftoken,

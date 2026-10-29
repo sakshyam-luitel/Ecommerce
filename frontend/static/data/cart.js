@@ -2,7 +2,7 @@ const csrftoken = getCookie("csrftoken");
 
 export async function getCart() {
   try {
-    const response = await fetch("/api/v1/cart/", {
+    const response = await fetch(window.apiUrl("/api/v1/cart/"), {
       credentials: "include",
     });
     if (!response.ok) {
@@ -21,7 +21,7 @@ export function saveToStorage() {
 
 export async function addToCart(productId, quantity, deliveryOptionId) {
   try {
-    const response = await fetch("/api/v1/cart/", {
+    const response = await fetch(window.apiUrl("/api/v1/cart/"), {
       method: "POST",
       credentials: "include",
       headers: {
@@ -44,7 +44,7 @@ export async function addToCart(productId, quantity, deliveryOptionId) {
 
 export async function removeFromCart(productId) {
   try {
-    const response = await fetch(`/api/v1/cart/${productId}/`, {
+    const response = await fetch(window.apiUrl(`/api/v1/cart/${productId}/`), {
       method: "DELETE",
       credentials: "include",
       headers: {
@@ -62,7 +62,7 @@ export async function removeFromCart(productId) {
 
 export async function updateCart(productId, quantity) {
   try {
-    const response = await fetch(`/api/v1/cart/${productId}/`, {
+    const response = await fetch(window.apiUrl(`/api/v1/cart/${productId}/`), {
       method: "PATCH",
       credentials: "include",
       headers: {
@@ -84,7 +84,7 @@ export async function updateCart(productId, quantity) {
 export async function calculateCartQuantity() {
   try {
     let cartQuantity = 0;
-    const response = await fetch("/api/v1/cart/", {
+    const response = await fetch(window.apiUrl("/api/v1/cart/"), {
       credentials: "include",
     });
     if (!response.ok) {
@@ -115,7 +115,7 @@ export async function updateDeliveryOption(
   matchingItem.deliveryOptionId = deliveryOptionId;
   //saveToStorage();
   try {
-    const response = await fetch(`/api/v1/cart/${((matchingItem.productId || matchingItem.product_id) || matchingItem.product_id)}/`, {
+    const response = await fetch(window.apiUrl(`/api/v1/cart/${((matchingItem.productId || matchingItem.product_id) || matchingItem.product_id)}/`), {
       method: "PATCH",
       credentials: "include",
       headers: {

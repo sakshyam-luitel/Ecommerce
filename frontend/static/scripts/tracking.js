@@ -14,7 +14,7 @@ async function loadTrackingData() {
 
   try {
     const csrftoken = getCookie("csrftoken");
-    const itemsRes = await fetch("/api/v1/order_items/", {
+    const itemsRes = await fetch(window.apiUrl("/api/v1/order_items/"), {
       headers: { "Content-Type": "application/json", "X-CSRFToken": csrftoken },
     });
     if (!itemsRes.ok) throw new Error("Failed to fetch tracking data");

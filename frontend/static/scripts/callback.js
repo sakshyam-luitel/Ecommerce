@@ -28,7 +28,7 @@ async function handleGoogleCallback() {
   sessionStorage.setItem("google_oauth_code", code);
 
   try {
-    const response = await fetch("/api/v1/auth/google/", {
+    const response = await fetch(window.apiUrl("/api/v1/auth/google/"), {
       method: "POST",
       credentials: "include",
       headers: {

@@ -45,7 +45,7 @@ const product1 = new Product({
 
 export async function getProduct(productId) {
   try {
-    const response = await fetch('/api/v1/products/', {
+    const response = await fetch(window.apiUrl("/api/v1/products/"), {
       method: 'GET',
       credentials: 'include',
       headers: {

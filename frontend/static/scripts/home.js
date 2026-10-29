@@ -9,7 +9,7 @@ const csrftoken = getCookie("csrftoken");
 
 async function getProducts() {
   try {
-    const response = await fetch("/api/v1/products/", {
+    const response = await fetch(window.apiUrl("/api/v1/products/"), {
       credentials: "include",
     });
     if (!response.ok) {

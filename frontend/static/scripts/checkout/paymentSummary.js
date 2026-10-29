@@ -118,7 +118,7 @@ document
       const csrftoken = getCookie("csrftoken");
 
       // STEP 1: Create the order first, get back the UUID
-      const orderResponse = await fetch("/api/v1/order/", {
+      const orderResponse = await fetch(window.apiUrl("/api/v1/order/"), {
         method: "POST",
         credentials: "include",
         headers: {
@@ -143,7 +143,7 @@ document
       const itemRequests = cartData.map(item => {
         const deliveryOption = getDeliveryOption(item.deliveryOptionId || item.delivery_option_id);
         const arrivingDate = dayjs().add(deliveryOption.deliveryDays, 'days').format('YYYY-MM-DD');
-        return fetch("/api/v1/order_items/", {
+        return fetch(window.apiUrl("/api/v1/order_items/"), {
           method: "POST",
           credentials: "include",
           headers: {
@@ -170,7 +170,7 @@ document
       }
 
       // STEP 3: Clear the cart
-      await fetch("/api/v1/cart/", {
+      await fetch(window.apiUrl("/api/v1/cart/"), {
         method: "DELETE",
         credentials: "include",
         headers: {

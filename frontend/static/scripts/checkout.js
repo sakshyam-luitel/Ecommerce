@@ -6,7 +6,7 @@ setupLogoutButton();
 
 export async function getCartData(){
     try{
-    const response = await fetch('/api/v1/cart/', {
+    const response = await fetch(window.apiUrl("/api/v1/cart/"), {
       credentials: "include",
     })
     if(!response.ok){

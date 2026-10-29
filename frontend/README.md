@@ -18,9 +18,10 @@ docker run --rm -p 8080:80 \
 ```
 
 For Render, create separate backend and frontend web services. In the
-**frontend** service, add `API_URL` and `GOOGLE_CLIENT_ID` under **Environment**.
-Set `BACKEND_URL` to the backend service URL, for example
-`https://your-backend-service.onrender.com`—not to the frontend service URL.
+**frontend** service, set `API_URL` to the backend service URL, for example
+`https://your-backend-service.onrender.com`, and add `GOOGLE_CLIENT_ID` under
+**Environment**. Browser API requests then use the backend URL directly.
+`BACKEND_URL` is only needed when using the Nginx reverse-proxy routes.
 Render passes these values to the container, and the Nginx entrypoint creates
 `/usr/share/nginx/html/env.js` before Nginx starts. The generated file exists
 only inside the running container and is not stored in GitHub.

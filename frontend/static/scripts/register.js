@@ -28,7 +28,7 @@ async function registerUser(){
     }
 
     try{
-        const response = await fetch('/api/auth/registration/',{
+        const response = await fetch(window.apiUrl("/api/auth/registration/"),{
            method: "POST",
            credentials: "include",
            headers: {

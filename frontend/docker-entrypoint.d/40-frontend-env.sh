@@ -15,7 +15,7 @@ window.env = Object.freeze({
 });
 
 window.apiUrl = (path) => {
-  const baseUrl = window.env.API_URL.replace(/\/+$/, "");
+  const baseUrl = (window.env.API_URL || window.location.origin).replace(/\/+$/, "");
   return baseUrl + "/" + String(path).replace(/^\/+/, "");
 };
 EOF

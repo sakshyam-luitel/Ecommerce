@@ -4,7 +4,7 @@ const csrftoken = getCookie("csrftoken");
 
 export async function logout() {
   try {
-    const response = await fetch("/api/auth/logout/", {
+    const response = await fetch(window.apiUrl("/api/auth/logout/"), {
       method: "POST",
       credentials: "include",
       headers: {

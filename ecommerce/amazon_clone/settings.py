@@ -32,7 +32,9 @@ FRONTEND_URL = os.environ.get('FRONTEND_URL')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = [
-    FRONTEND_URL
+    host.strip()
+    for host in os.environ.get('ALLOWED_HOSTS', '*').split(',')
+    if host.strip()
 ]
 
 
@@ -46,7 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    # 'corsheaders',
+    'corsheaders',
     'amazon_app',
     'api',
 
@@ -68,19 +70,22 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
-    # "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware"
 ]
 
-CORS_ALLOWED_ORIGIN = [
-    FRONTEND_URL
+CORS_ALLOWED_ORIGINS = [
+    origin.strip()
+    for origin in os.environ.get('CORS_ALLOWED_ORIGINS', FRONTEND_URL or '').split(',')
+    if origin.strip()
 ]
+CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
+CORS_ALLOW_CREDENTIALS = True
 
 ROOT_URLCONF = 'amazon_clone.urls'
 
