@@ -89,8 +89,12 @@ export async function calculateCartQuantity() {
     });
     if (!response.ok) {
       console.log("Failed to get cart Data");
+      return [];
     }
     const cartData = await response.json();
+    if (!Array.isArray(cartData)) {
+      return [];
+    }
     cartData.forEach((cartItem) => {
       cartQuantity += cartItem.quantity;
     });

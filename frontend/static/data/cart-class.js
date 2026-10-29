@@ -8,7 +8,7 @@ class Cart{
         }
 
     loadFromStorage = function() {
-      const cartPromise = fetch('api/products').then((response) =>{return response.json()});     
+      const cartPromise = fetch(window.apiUrl("/api/v1/products/")).then((response) =>{return response.json()});     
       this.cartItems = cartPromise||
       [
     {
@@ -53,9 +53,10 @@ class Cart{
           console.log(cart);
           this.saveToStorage();
 
-          const fetchPromise = fetch('api/products/',
+          const fetchPromise = fetch(window.apiUrl("/api/v1/cart/"),
             {
               method : 'POST' , 
+              credentials: "include",
               headers : {'Content-Type' : 'application/json'},
               body : JSON.stringify({
                 productId : productId , 
@@ -129,5 +130,4 @@ console.log(businessCart);
 
 
     
-
 

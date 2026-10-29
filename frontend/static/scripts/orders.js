@@ -16,6 +16,7 @@ async function loadAndRenderOrders() {
          "Content-Type": "application/json",
           "X-CSRFToken": csrftoken
          },
+      credentials: "include",
     });
     if (!ordersRes.ok) 
       throw new Error("Failed to load orders");
@@ -29,6 +30,7 @@ async function loadAndRenderOrders() {
         { "Content-Type": "application/json",
            "X-CSRFToken": csrftoken 
         },
+        credentials: "include",
     });
     if (!itemsRes.ok) 
       throw new Error("Failed to load order items");
@@ -134,6 +136,7 @@ async function loadAndRenderOrders() {
             headers: {
               "X-CSRFToken": csrftoken,
             },
+            credentials: "include",
           });
           if (deleteRes.ok) {
             loadAndRenderOrders(); // re-render list
