@@ -23,6 +23,11 @@ export async function loginUser(email, password) {
       return false;
     }
 
+    const accessToken = data.access || data.access_token;
+    if (accessToken) {
+      localStorage.setItem("access_token", accessToken);
+    }
+
     if (data.user && data.user.username) {
       localStorage.setItem("username", data.user.username);
     } else if (email) {

@@ -20,6 +20,7 @@ export async function logout() {
   }
 
   localStorage.removeItem("username");
+  localStorage.removeItem("access_token");
   window.navigateTo("/");
 }
 
