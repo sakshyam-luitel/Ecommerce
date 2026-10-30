@@ -39,7 +39,7 @@ window.apiUrl = (path) => {
       indicator.id = "global-api-loading";
       indicator.setAttribute("role", "status");
       indicator.setAttribute("aria-label", "Working");
-      indicator.innerHTML = '<span class="global-api-loading-spinner"></span>';
+      indicator.innerHTML = '<span class="global-api-loading-label">Working</span><span class="global-api-loading-dots" aria-hidden="true"><i></i><i></i><i></i></span>';
       Object.assign(indicator.style, {
         position: "fixed",
         top: "16px",
@@ -48,23 +48,32 @@ window.apiUrl = (path) => {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        width: "34px",
+        gap: "7px",
+        minWidth: "92px",
         height: "34px",
-        borderRadius: "50%",
+        padding: "0 10px",
+        borderRadius: "17px",
         background: "#16324F",
+        color: "#fff",
+        font: "600 12px Arial, sans-serif",
         boxShadow: "0 4px 14px rgba(0,0,0,.25)",
+        animation: "global-api-loading-in .2s ease-out",
       });
-      const spinner = indicator.firstElementChild;
-      Object.assign(spinner.style, {
-        width: "16px",
-        height: "16px",
-        border: "2px solid rgba(255,255,255,.35)",
-        borderTopColor: "#fff",
-        borderRadius: "50%",
-        animation: "global-api-spin .75s linear infinite",
+      Object.assign(indicator.querySelector(".global-api-loading-dots").style, {
+        display: "inline-flex",
+        gap: "3px",
+      });
+      indicator.querySelectorAll(".global-api-loading-dots i").forEach((dot, index) => {
+        Object.assign(dot.style, {
+          width: "4px",
+          height: "4px",
+          borderRadius: "50%",
+          background: "#fff",
+          animation: "global-api-dot 1.1s ease-in-out " + (index * 0.15) + "s infinite",
+        });
       });
       const style = document.createElement("style");
-      style.textContent = "@keyframes global-api-spin { to { transform: rotate(360deg); } }";
+      style.textContent = "@keyframes global-api-loading-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } } @keyframes global-api-dot { 0%, 60%, 100% { opacity: .35; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }";
       document.head.appendChild(style);
       document.body.appendChild(indicator);
     }
