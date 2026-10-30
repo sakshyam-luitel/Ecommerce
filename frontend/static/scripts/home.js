@@ -38,7 +38,7 @@ if (!Array.isArray(products)) {
   const productsGrid = document.querySelector(".js-products-grid");
   if (productsGrid) {
     productsGrid.innerHTML =
-      '<p class="page-loading">Please sign in to view products.</p>';
+      "<p>Please sign in to view products.</p>";
   }
 } else {
   console.log(products);

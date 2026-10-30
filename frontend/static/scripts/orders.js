@@ -151,7 +151,7 @@ async function loadAndRenderOrders() {
   } catch (error) {
     console.error("Error rendering orders:", error);
     document.querySelector(".js-orders-grid").innerHTML =
-      `<p>Failure loading orders.</p>`;
+      `<p>Unable to display orders.</p>`;
   }
 }
 

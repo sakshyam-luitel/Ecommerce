@@ -140,7 +140,7 @@ async function render(pathname) {
   const route = routes[getRoutePath(pathname)] || routes["/"];
   const app = document.getElementById("app");
   app.className = `route-${route.template}`;
-  app.innerHTML = '<div class="page-loading">Loading…</div>';
+  app.innerHTML = "";
 
   try {
     const page = await loadTemplate(route.template);

@@ -76,7 +76,7 @@ async function loadTrackingData() {
 
     document.querySelector(".js-order-tracking").innerHTML = trackingHTML;
   } catch (error) {
-    console.error("Error loading tracking info:", error);
+    console.error("Unable to fetch tracking info:", error);
   }
 }
 
