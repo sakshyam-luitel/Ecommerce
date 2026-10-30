@@ -39,7 +39,7 @@ window.apiUrl = (path) => {
       indicator.id = "global-api-loading";
       indicator.setAttribute("role", "status");
       indicator.setAttribute("aria-label", "Working");
-      indicator.innerHTML = '<span class="global-api-loading-label">Working</span><span class="global-api-loading-dots" aria-hidden="true"><i></i><i></i><i></i></span>';
+      indicator.textContent = "Working";
       Object.assign(indicator.style, {
         position: "fixed",
         top: "16px",
@@ -57,24 +57,7 @@ window.apiUrl = (path) => {
         color: "#fff",
         font: "600 12px Arial, sans-serif",
         boxShadow: "0 4px 14px rgba(0,0,0,.25)",
-        animation: "global-api-loading-in .2s ease-out",
       });
-      Object.assign(indicator.querySelector(".global-api-loading-dots").style, {
-        display: "inline-flex",
-        gap: "3px",
-      });
-      indicator.querySelectorAll(".global-api-loading-dots i").forEach((dot, index) => {
-        Object.assign(dot.style, {
-          width: "4px",
-          height: "4px",
-          borderRadius: "50%",
-          background: "#fff",
-          animation: "global-api-dot 1.1s ease-in-out " + (index * 0.15) + "s infinite",
-        });
-      });
-      const style = document.createElement("style");
-      style.textContent = "@keyframes global-api-loading-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } } @keyframes global-api-dot { 0%, 60%, 100% { opacity: .35; transform: translateY(0); } 30% { opacity: 1; transform: translateY(-3px); } }";
-      document.head.appendChild(style);
       document.body.appendChild(indicator);
     }
     if (indicator) {
