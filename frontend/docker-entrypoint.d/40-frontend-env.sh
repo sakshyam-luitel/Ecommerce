@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-escape_js_string() {
+function escape_js_string() {
     printf '%s' "${1-}" | sed 's/\\/\\\\/g; s/"/\\"/g; s/\r/\\r/g; s/\n/\\n/g'
 }
 
